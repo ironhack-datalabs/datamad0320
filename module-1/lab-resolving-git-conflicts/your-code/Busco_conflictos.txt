@@ -2,6 +2,6 @@ Esta línea va a ir bien
 
 Esta también
 
-Esta línea busca conflictos
+Esta línea me tiene que dar error
 
 Esta va bien
