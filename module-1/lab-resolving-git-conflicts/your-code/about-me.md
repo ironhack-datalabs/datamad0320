@@ -31,6 +31,8 @@ Cambio 5
 
 Cambio 6
 
+Cambio 7
+
 Suspendisse ut malesuada ex. Nulla ultricies nisl et nisi rhoncus sollicitudin. Vestibulum maximus iaculis ligula, nec commodo nunc ullamcorper nec. Duis quis condimentum sapien. Cras vestibulum interdum felis eu auctor. Quisque semper, magna at dapibus faucibus, felis risus semper ligula, id aliquam lectus ligula vel nisi. In hac habitasse platea dictumst. 
 
 # What will I do after the bootcamp?
