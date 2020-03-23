@@ -4,6 +4,7 @@
 I'm from Seville, although I have been living in Madrid since 2010
 * What do you do?
 I am a researcher in the Molecular Biology field. I have been working in a laboratory until february of this year.
+I am a researcher in the Molecular Biology field. I have been working in a laboratory until february of this year.
 * Do you have previous experience with technology/data?
 Not really. I just learnt some of programming in C language during my Bachelor degree, but it was long time ago.
 
