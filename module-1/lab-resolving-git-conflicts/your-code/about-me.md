@@ -7,7 +7,9 @@
 # Why am I here
 
 * What has brought you to Ironhack?
-* What knowledge/skills do you expect to learn in this bootcamp?
+asdas
+da
+* qw12What knowledge/skills do you expect to learn in this bootcamp?ajsdiajsdi
 
 # What will I do after the bootcamp?
 
