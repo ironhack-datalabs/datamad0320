@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 * Where are you from?
 Iḿ from Madrid  
 * What do you do?
@@ -6,33 +5,16 @@ I'm studying data bootcamp
 * Do you have previous experience with technology/data?
 No, I'dont 
 
-# Why am I here
-
+# Why am I here:
+I want to learn
 # What has brought you to Ironhack?
 Because I want to work in technologies and data
 
-=======
-
-* Where are you from?
-Iḿ from Madrid
-
-
-* What do you do?
-I'm studying data bootcamp
-* Do you have previous experience with technology/data?
-No, I'dont 
-
-# Why am I here
-
-# What has brought you to Ironhack?
-Because I want to work in technologies and data
-
->>>>>>> 17c65e8669b0819cf857cb4bad58861cee4eba22
 # What knowledge/skills do you expect to learn in this bootcamp?
 I hope I can learn data science skills, python and SQL
 
 # What will I do after the bootcamp?
-
+I'll look for a job
 # Which industry will you seek employment in?
 I think I'll seek a job in the technology sector / data analysis
 
