@@ -1,5 +1,11 @@
 This is a test text to check if ther eis going to be any issue mergin branches
 
+<<<<<<< HEAD
 In this case there should be an issue :)
 
 Let's try to see the issue 
+=======
+I hope there an issue
+
+Because if not I don't knwo what else to do 
+>>>>>>> lab-r-g-c-master
