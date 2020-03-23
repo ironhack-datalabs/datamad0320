@@ -1,0 +1,1 @@
+Este archivo es conflictivo pues no existe en la rama madre 'lab-resolving-git-conflict'
