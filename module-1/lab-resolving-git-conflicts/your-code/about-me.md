@@ -22,3 +22,4 @@ Análisis de datos espaciales
 Data scientist
 * What is your career goal?
 Trabajar con mejores condiciones que las que dejo atrás.
+Claro que sí
