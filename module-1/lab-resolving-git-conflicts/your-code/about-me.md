@@ -1,6 +1,8 @@
 
 * Where are you from?
-Iḿ from Spain       
+Iḿ from Madrid
+
+
 * What do you do?
 I'm studying data bootcamp
 * Do you have previous experience with technology/data?
