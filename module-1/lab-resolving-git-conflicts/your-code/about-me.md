@@ -22,3 +22,4 @@ I will seek in Lilly, Roche, GSK, BMS...
 I would like to work as a data analyst or data science in a pharmaceutical company to investigate about the effects of new 
 Voy a crear una rama llamada martes2 a partir de esta modificación de lab-resolving
 He creado martes2 y lo siguiente es meter este cambio en lab-resolving
+Ultimo cambio en lab-resolving después de haber creado martes2, haber cambiado lab-resolving y haber cambiado martes2
