@@ -6,6 +6,7 @@ I am from Seville, although I have been living in Madrid since 2010.
 Voy a intentarlo por última vez! Hoy es martes
 Hola! estoy modificando esto
 Segundo cambio que meto hoy martes despues de haber generado la rama martes
+ultimo cambio en rama lab resolving
 # Why am I here
 Quiero modificar más cosas por eso estoy aquí
 * What has brought you to Ironhack?
