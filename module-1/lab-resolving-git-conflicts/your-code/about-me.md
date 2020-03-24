@@ -21,3 +21,4 @@ I will seek in Lilly, Roche, GSK, BMS...
 * What will your future role look like?
 I would like to work as a data analyst or data science in a pharmaceutical company to investigate about the effects of new 
 Voy a crear una rama llamada martes2 a partir de esta modificación de lab-resolving
+Primer cambio en martes2 después de haber sido creada y haber metido un cambio en lab-resolving
