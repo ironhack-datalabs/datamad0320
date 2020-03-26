@@ -239,13 +239,29 @@ except Exception as error:
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 
+import math
+
+def square_int(number):
+    if type(number) != int:
+        raise ValueError("You should pass number as an int")
+    return math.sqrt(number)
+
+while True:
+    try:
+        number = input("Dime un numero")
+        print(square_int(number))
+        break
+    except:
+        print("Perdona, has metido un dato mal, vuelve a intentarlo")
 
 
 
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
 
+results = [e for e in range(1,1000) for x in range(2,10) if e%x ==0]
 
+print(results)
 
 
 # 23. Define a customised exception to handle not accepted values. 
