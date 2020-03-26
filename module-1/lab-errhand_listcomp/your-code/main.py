@@ -9,7 +9,7 @@ print(my_listComprehension)
 #Insert here the module/library import statements 
 import os
 from random import randrange
-
+import sys
 
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
@@ -184,10 +184,10 @@ except ZeroDivisionError:
 try:
     f = open('testfile','r')
     f.write('Test write this')
-except FileNotFoundError:
+except Exception:
     print('This file doesn\'t exist')
 
-
+#I've found on documentartion an FileNotFoundError but it doesn't compile on the terminal (althought it does on jupyter)
 
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
@@ -196,7 +196,7 @@ try:
     fp = open('myfile.txt')
     line = f.readline()
     i = int(s.strip())
-except FileNotFoundError:
+except Exception:
     print('This file doesn\'t exist')
 except ValueError:
     print('Could not convert to int')
@@ -210,6 +210,10 @@ except ValueError:
 def linux_interaction():
     assert ('linux' in sys.platform), "Function can only run on Linux systems."
     print('Doing something.')
+try:
+    linux_interaction()
+except AssertionError:
+    print('You\'re not using a Linux platform!')
 
 
 # Bonus Questions:
@@ -220,13 +224,28 @@ def linux_interaction():
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 
-
+def ask_for_int():
+    a=input('Introduce an integer number: ')
+    while type(a)!=int:
+        try:
+            a=int(a)
+            return a**2
+        except ValueError:
+            print('You\'ve not introduced an integer number')
+            a=input('Introduce an integer number: ')
+    else:
+        return a**2
 
 
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
 
 
+result=[k for k in range(1,1001) for m in range(2,10) if k%m==0 ]
+
+print(result)
+
+#Couldn't find the way to make the list comprehension to add the elements only once, because break can't be used 
 
 
 # 23. Define a customised exception to handle not accepted values. 
