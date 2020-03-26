@@ -11,6 +11,7 @@ print(my_listComprehension)
 import math
 import os
 import random
+import sys
 
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
@@ -89,7 +90,6 @@ consonants = [e for e in sentence2 if (e.lower() not in vowels) and (e != ' ')]
 print(consonants)
 
 
-
 #10. Find the folders you have in your madrid-oct-2018 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
@@ -98,7 +98,7 @@ print(consonants)
     #es el path de la carpeta, el segundo es una lista con las carpetas que contiene y el tercero es una lista con los archivos que contiene.
 
     #Primero guardo una lista con todas las listas de subcarpetas
-tuplas = [e[1] for e in os.walk('/home/david/Documents/Ironhack/datamad0320/datamad0320/')]
+tuplas = [e[1] for e in os.walk('../../..')]
     #Ahora sí puedo extraer los nombres de todas las listas de subcarpetas
 files = [folder for e in tuplas for folder in e]
 
@@ -138,7 +138,12 @@ print(floats)
 
 
 for i in ['a','b','c']:
-    print i**2
+    try:
+        int(i)
+        print(i**2)
+    except Exception:
+        print('The imput is not an integer')
+
 
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
@@ -148,41 +153,66 @@ for i in ['a','b','c']:
 x = 5
 y = 0
 
-z = x/y
-
-
+try:
+    z = x/y
+    print(z)
+except ZeroDivisionError:
+    print ("Can't divide by zero") 
+finally:
+    print('All Done')
 
 
 #16. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
 abc=[10,20,20]
-print(abc[3])
+try:
+    print(abc[3])
+except IndexError:
+    print('Index out of index')
 
 
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
 
-
-
+while True:
+    try: 
+        num1 = input('Dame un número!: ')
+        num2 = input("Dame otro número!: ")
+        x = int(num1)/int(num2)
+        print(x)
+        break
+    except ValueError:
+        print("One of your numbers is not an integer")
+    except ZeroDivisionError:
+        print("You cannot divide by zero! You know maths?")
 
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
-f = open('testfile','r')
-f.write('Test write this')
-
+try:
+    f = open('testfile','r')
+    f.write('Test write this')
+except FileNotFoundError as error:
+    print('I cannot find that file')
 
 
 
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
 
-fp = open('myfile.txt')
+    #Aquí he intentado atrapar el IndentationError, pero después de investigar un poco, parece que no es posible. Al menos si el error está en el mismo archivo
+    #porque entonces python no puede compilar el código...
+
+try:
+    fp = open('myfile.txt')
     line = f.readline()
     i = int(s.strip())
-
+except FileNotFoundError:
+    print('That file cannot be found')
+except NameError:
+    print("That variable is not defined")
 
 
 
@@ -195,6 +225,12 @@ def linux_interaction():
     assert ('linux' in sys.platform), "Function can only run on Linux systems."
     print('Doing something.')
 
+try:
+    linux_interaction()
+except Exception:
+    print('This funcion only works in a Linux')
+
+
 
 # Bonus Questions:
 
@@ -204,7 +240,20 @@ def linux_interaction():
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 
+def sqared_input():
+    n = input('Give me an integer: ')
+    try:
+        x = int(n)
+        print(f"Here, I squared it: {x**2}")
+    except Exception:
+        raise TypeError ('Not an integer')
 
+while True:
+    try:
+        sqared_input()
+        break
+    except TypeError:
+        print("Your input is not an integer")
 
 
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
@@ -219,5 +268,4 @@ def linux_interaction():
 
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: "))
-
 
