@@ -103,9 +103,9 @@ try:
     for i in ['a','b','c']:
         print(i**2)
 except Exception as identifier:
-    print(f"This error is a: {identifier}")
+    print(f"This is not allowed because {iden}")
 
-"""
+
 #15. Handle the exception thrown by the code below by using try and except blocks. 
 #Then use a finally block to print 'All Done.'
 # Check in provided resources the type of error you may use. 
@@ -114,42 +114,49 @@ try:
     x = 5
     y = 0
     z = x/y
-    print(z)
-except Exception as identifier:
-    print(identifier)
-#     pass
-# else:
-#     pass
-# finally:
-#     pass
+except ZeroDivisionError as iden:
+    print(f"This is not allowed because {iden}")
+finally:
+    print('All Done.')
 
 
-
-
-"""
 #16. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
-
-abc=[10,20,20]
-print(abc[3])
+try:
+    abc=[10,20,20]
+    print(abc[3])
+except IndexError as iden:
+    print(f"This is not allowed because {iden}")
 
 
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
 
+def div(x, y):
+    return f"{x} divided by {y} is: ",(x/y)
 
+while True:
+    try:
+        x = input("Give me a number: ")
+        y = input("Give me another number: ")
+        print(div(int(x),int(y)))
+        break
+    except ValueError:
+        print("Sorry, your data is not correct try again")
+    except ZeroDivisionError:
+        print("Another number can't be 0, try again")
 
-
+"""
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
+try:
+    f = open('testfile','r')
+    f.write('Test write this')
+except FileNotFoundError as iden:
+    print(f"This is not allowed because {iden}")
 
-f = open('testfile','r')
-f.write('Test write this')
-
-
-
-
+"""
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
 
