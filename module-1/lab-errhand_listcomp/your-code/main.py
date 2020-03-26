@@ -8,6 +8,7 @@ print(my_listComprehension)
 import random
 import os
 from math import sqrt
+import sys
 """
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
@@ -147,7 +148,7 @@ while True:
     except ZeroDivisionError:
         print("Another number can't be 0, try again")
 
-"""
+
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 try:
@@ -156,15 +157,15 @@ try:
 except FileNotFoundError as iden:
     print(f"This is not allowed because {iden}")
 
-"""
+
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
-
-fp = open('myfile.txt')
+try:
+    fp = open('myfile.txt')
     line = f.readline()
     i = int(s.strip())
-
-
+except FileNotFoundError as iden:
+    print(f"This is not allowed because {iden}")
 
 
 #20. The following function can only run on a Linux system. 
@@ -176,6 +177,12 @@ def linux_interaction():
     assert ('linux' in sys.platform), "Function can only run on Linux systems."
     print('Doing something.')
 
+try:
+    print(linux_interaction())
+except AssertionError as iden:
+    print(f"This is not allowed because {iden}")
+# print(sys.platform)
+
 
 # Bonus Questions:
 
@@ -185,15 +192,39 @@ def linux_interaction():
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 
+def div(x):
+    return x**2
 
+while True:
+    try:
+        x = input("Give me a number: ")
+        print(div(int(x)))
+        break
+    except ValueError:
+        print("Sorry, your data is not correct try again")
+    except ZeroDivisionError:
+        print("Another number can't be 0, try again")
 
-
+"""
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
+h=["hola","gola","a","asdfa"]
+result=[e for e in range(1,1000) if (e % 2 == 0) or (e % 3 == 0) or (e % 4 == 0)or (e % 5 == 0) or (e % 6 == 0) or (e % 7 == 0) or (e % 8 == 0) or (e % 9 == 0)]
+#results=[number for number in range(1, 101) if number % 2 == 0 if number % 5 == 0]
+print(result)
+# def div(x):
+#     for n in x:
+#         s=[]
+#         if n % range(2,9) != 0:
+#             s.append(n)
+#     print(s)
+
+# results=[div(range(100))]    
+#results=[n for n in range(100) if (n % 3 != 0)]
 
 
 
-
+"""
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
