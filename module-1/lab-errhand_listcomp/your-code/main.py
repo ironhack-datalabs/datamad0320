@@ -136,41 +136,74 @@ print(floats)
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
 
-###for i in ['a','b','c']:
-   ### print i**2
+try:
+    for i in ['a','b','c']:
+        print(i**2)
+except Exception as error:
+    print(error, type(error))
+    print("You can't pass a string as a number")
 
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
 #Then use a finally block to print 'All Done.'
 # Check in provided resources the type of error you may use. 
 
-###x = 5
-###y = 0
-
-##z = x/y
-
+try:
+    x = 5
+    y = 0
+    z = x/y
+    print(z)
+except Exception as error:
+    print(error, type(error))
+    print("You can't divide a number by 0")
+    z = 5
+    if z>0:
+        print("All done")
 
 
 
 #16. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
-##abc=[10,20,20]
-##print(abc[3])
-
+try:
+    abc=[10,20,20]
+    print(abc[3])
+except Exception as err:
+    print(err, type(err))
+    print("index of abc only from [0] to [2]")
 
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
 
+def start_form(day, year):
+    if type(day) != int:
+        raise ValueError("You should pass day as an int")
+    if type(year) != int:
+        raise ValueError("You should pass year as an int")
+    return "You started the bootcamp on the"+ day +" of" + year
+
+while True:
+    try:
+        day = input("Dime cuando empezaste el bootcamp")
+        year = input("Dime en que año")
+        print(start_form(int(day),int(year)))
+        break
+    except:
+        print("Perdona, has metido un dato mal, vuelve a intentarlo")
+        
 
 
 
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
-##f = open('testfile','r')
-##f.write('Test write this')
+try:
+    f=open('testfile','r')
+    f.write('Test write this')
+except Exception as error:
+    print(error, type(error))
+    print("Please check the the file or directory name and do it again")
 
 
 
