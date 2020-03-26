@@ -133,10 +133,11 @@ print (floats)
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
-
 for i in ['a','b','c']:
-    print i**2
-
+    try:
+        print (i**2)
+    except TypeError as e:
+        print(e)
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
 #Then use a finally block to print 'All Done.'
@@ -145,24 +146,37 @@ for i in ['a','b','c']:
 x = 5
 y = 0
 
-z = x/y
-
-
+try:
+    z = x/y
+except ZeroDivisionError as e:
+    print('Division by zero')
 
 
 #16. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
 abc=[10,20,20]
-print(abc[3])
+
+try:
+    print(abc[3])
+except IndexError:
+    print('index out of range')
+ 
 
 
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
 
+a=input('First number: ')
+b=input('Second number: ')
 
-
+try:
+    print(float(a)/float(b)) 
+except ValueError:
+    print('Numbers must be provided')
+except ZeroDivisionError:
+    print ('You can not divide by zero')
 
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
