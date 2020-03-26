@@ -8,8 +8,9 @@ print(my_listComprehension)
 
 #Insert here the module/library import statements 
 
-
-
+import math
+import os
+import random
 
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
@@ -29,25 +30,29 @@ print(power_of_two)
 # You will probably need to install math library with pip and import it in this file.  
 # Remember to use list comprehensions and to print your results
 
-
+sqrt = [math.sqrt(e) for e in range(101)]
+print(sqrt)
 
 
 #4. Create this list [-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0]. Use my_list as the name of the list.
 # Remember to use list comprehensions and to print your results
 
-
+my_list = [e for e in range(-10, 1)]
+print(my_list)
 
 
 #5. Find the odd numbers from 1-100. Use odds as the name of the list. 
 # Remember to use list comprehensions and to print your results
 
-
+odds = [e for e in range(1,101) if e%2==0]
+print(odds)
 
 
 #6. Find all of the numbers from 1-1000 that are divisible by 7. Use divisible_by_seven as the name of the list.
 # Remember to use list comprehensions and to print your results
 
-
+divisible_by_seven = [e for e in range(1,1001) if e%7==0]
+print(divisible_by_seven)
 
 
 #7. Remove all of the vowels in a string. Hint: make a list of the non-vowels. Use non_vowels as the name of the list.
@@ -56,21 +61,32 @@ print(power_of_two)
 
 teststring = 'Find all of the words in a string that are monosyllabic'
 
+    #Creo que es más rápido hacer una lista con las vocales mejor que con las consonantes...
+vowels = ['a', 'e', 'i', 'o', 'u']
 
+    #Creo la list comprehension y a la vez la junto en una sola string
+non_vowels = ''.join([e for e in teststring if e.lower() not in vowels])
+print(non_vowels)
 
 
 #8. Find the capital letters (and not white space) in the sentence 'The Quick Brown Fox Jumped Over The Lazy Dog'. 
 # Use capital_letters as the name of the list.  
 # Remember to use list comprehensions and to print your results
 
-
+sentence = 'The Quick Brown Fox Jumped Over The Lazy Dog'
+capital_letters = [e for e in sentence if e.isupper()]
+print(capital_letters)
 
 
 #9. Find all the consonants in the sentence 'The quick brown fox jumped over the lazy dog'.
 # Use consonants as the name of the list.
 # Remember to use list comprehensions and to print your results.
 
+sentence2 = 'The quick brown fox jumped over the lazy dog'
 
+    #Este es muy parecido al ejercicio 7, así que puedo reusar la variable vowels
+consonants = [e for e in sentence2 if (e.lower() not in vowels) and (e != ' ')]
+print(consonants)
 
 
 
@@ -78,19 +94,31 @@ teststring = 'Find all of the words in a string that are monosyllabic'
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
+    #Con la función walk en os, por cada carpeta y subcarpeta en una carpeta, crea una tupla con tres elementos, el primero 
+    #es el path de la carpeta, el segundo es una lista con las carpetas que contiene y el tercero es una lista con los archivos que contiene.
 
+    #Primero guardo una lista con todas las listas de subcarpetas
+tuplas = [e[1] for e in os.walk('/home/david/Documents/Ironhack/datamad0320/datamad0320/')]
+    #Ahora sí puedo extraer los nombres de todas las listas de subcarpetas
+files = [folder for e in tuplas for folder in e]
+
+print(files)
 
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
 
-
-
+    
+random_lists = [random.sample(range(101), 10) for e in range(4)]
+print(random_lists)
 
 #12. Flatten the following list of lists. Use flatten_list as the name of the output.
 # Remember to use list comprehensions and to print your results
 
 list_of_lists = [[1,2,3],[4,5,6],[7,8,9]]
+flatten_list = [i for e in list_of_lists for i in e]
+
+print(flatten_list)
 
 
 
@@ -101,6 +129,8 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 ['30', '20', '30', '50', '10', '30', '20', '20', '20'], ['100', '100'], ['100', '100', '100', '100', '100'], \
 ['100', '100', '100', '100']]
 
+floats = [float(i) for e in list_of_lists for i in e]
+print(floats)
 
 
 
