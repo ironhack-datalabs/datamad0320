@@ -10,7 +10,7 @@ print(my_listComprehension)
 #Insert here the module/library import statements 
 
 import math
-
+import os 
 """
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
@@ -64,28 +64,33 @@ non_vowels = [e for e in teststring if set(["a","e","i","o","u"]).isdisjoint(e)]
 print("".join(non_vowels))
 
 
-"""
+
 #8. Find the capital letters (and not white space) in the sentence 'The Quick Brown Fox Jumped Over The Lazy Dog'. 
 # Use capital_letters as the name of the list.  
 # Remember to use list comprehensions and to print your results
 
+sentence = 'The Quick Brown Fox Jumped Over The Lazy Dog'
+capital_letters = [e for e in sentence if e.isupper()]
+print(capital_letters)
 
 
-"""
 #9. Find all the consonants in the sentence 'The quick brown fox jumped over the lazy dog'.
 # Use consonants as the name of the list.
 # Remember to use list comprehensions and to print your results.
 
+sentence2 = 'The quick brown fox jumped over the lazy dog'
+consonants = [e for e in sentence2 if set(["a","e","i","o","u"," "]).isdisjoint(e)]
+print(consonants)
 
-
-
-
+"""
 #10. Find the folders you have in your madrid-oct-2018 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
+files = [dir for roots, dirs, files in os.listdir("/home/flori/datamad0320")]
+print(files)
 
-
+"""
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
@@ -114,7 +119,7 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 
 
 for i in ['a','b','c']:
-    print i**2
+    print (i**2)
 
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
