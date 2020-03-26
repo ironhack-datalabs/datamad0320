@@ -188,7 +188,7 @@ while True:
         print("Lo siento, has metido un dato mal, intentalo de buevo")
 
 
-"""
+
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 try:
@@ -208,7 +208,7 @@ fp = open('myfile.txt')
 
 
 
-
+"""
 #20. The following function can only run on a Linux system. 
 # The assert in this function will throw an exception if you call it on an operating system other than Linux. 
 # Handle this exception using try and except blocks. 
