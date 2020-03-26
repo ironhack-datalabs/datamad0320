@@ -1,3 +1,4 @@
+
 #Example: 
 
 eggs = (1,3,8,3,2)
@@ -259,13 +260,40 @@ while True:
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
 
+"""
+    #Tengo que replicar esto en una list comprehension
+    lst=[]
+    for e in range(100):
+        for i in range(2,10):
+            if e%i==0:
+                lst.append(e)
+                break
+"""
 
+    #Incluye 'e' en la lista solo si la segunda lista existe (no es una lista vacía). La segunda lista incluye 
+    # los módulos que resultan en 0 al dividir 'e' por los número 2-9
+results = [e for e in range(1001) if [i for i in range(2,10) if e%i==0]]
+print(results)
 
 
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
-Total_Marks = int(input("Enter Total Marks Scored: ")) 
-Num_of_Sections = int(input("Enter Num of Sections: "))
+    #Primero hay que crear el error como una clase nueva que deriva de Exception(aunque no entiendo completamente lo que es que derive de otra clase...)
+    #Después ya la podemos tratar como cualquier otra excepción.
+class TooFewSections(Exception):
+    pass
 
+while True:
+    try:
+        Total_Marks = int(input("Enter Total Marks Scored: ")) 
+        Num_of_Sections = int(input("Enter Num of Sections: "))
+        if Num_of_Sections < 2:
+            raise TooFewSections ('The number of sections is lower than 2')
+        else:
+            print("You're good")
+            break
+    except TooFewSections as err:
+        print('Increase the number of sections.')
+        print(type(err), err)
