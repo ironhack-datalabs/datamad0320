@@ -10,7 +10,7 @@ print(my_listComprehension)
 import math
 import random
 import os
-
+import sys
 """
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
@@ -130,8 +130,9 @@ print(floats)
 try:
     for i in ['a','b','c']:
         print i**2
-      raise NameError(ErrorSyntax)  
-except expression as identifier:
+      raise ErrorSyntax(ErrorSyntax)  
+except ErrorSyntax:
+    print(f"Falla en la sintaxix")
    
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
@@ -142,10 +143,10 @@ try:
     x = 5
     y = 0
     z = x/y
-    reaise NameError("ZeroDivisionError")
+    reaise ZeroDivisionError("ZeroDivisionError")
 except ZeroDivisionError:
     
-    print (f"El erro a arreglar es de indole ZeroDivisionError ")   
+    print (f"El error a arreglar es de indole ZeroDivisionError ")   
 print(f'All Done')
 
 
@@ -154,9 +155,9 @@ print(f'All Done')
 try:
     abc=[10,20,20]
     print(abc[3])
-    raise NameError("IndexErro")
+    raise IndexError("IndexErro")
 except IndexError:
-    
+    print(f"Error de indice")
 
 
 
@@ -165,16 +166,16 @@ except IndexError:
 # Check in provided resources the type of error you may use. 
 try:
     print (3/0) 
-    raise NameError("ZeroDivisionErro")
+    raise ZeroDivisionError("ZeroDivisionErro")
 except ZeroDivisionError:
-    pass
+    print(f"No se puede dividir por 0")
 
 
 def saluda(nombre, edad):
     if type(edad) != int:
-        raise NameError("ValueError")
+        raise ValueError("ValueError")
     if type(nombre) != str:
-        raise NameError("ValueError")
+        raise ValueError("ValueError")
     return "Hola "+ nombre + " Tienes" + str(edad)
 
 while True:
@@ -182,7 +183,7 @@ while True:
         name = input("Cual es su nombre ")
         age = input("Que edad tienes ")
         print(saluda(name,int(age)))
-        raise NameError("ValueError")
+        raise ValueError("ValueError")
         break
     except ValueError:
         print("Lo siento, has metido un dato mal, intentalo de buevo")
@@ -194,52 +195,77 @@ while True:
 try:
     f = open('testfile','r')
     f.write('Test write this')
-    raise NameError(f"FileNotFoundError, don,t such file or directory f")
+    raise FileNotFoundError(f"FileNotFoundError, don,t such file or directory f")
 except FileNotFoundError:
+    print(f"No encuentra los ficheros")
 
 
-"""
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
+try:
+    fp = open('myfile.txt')
+    raise NameError('FileNotFoundError')
 
-fp = open('myfile.txt')
+except FileNotFoundError:       
+    pass
+try :
     line = f.readline()
     i = int(s.strip())
+    raise NameError('IndentationError')
+except NameError: 
+
+    print("Bueno creo que lo tengo que areglar el fichero que no encuentra y el valor")    
 
 
 
-"""
+
 #20. The following function can only run on a Linux system. 
 # The assert in this function will throw an exception if you call it on an operating system other than Linux. 
 # Handle this exception using try and except blocks. 
 # You will probably need to import sys 
-
-def linux_interaction():
-    assert ('linux' in sys.platform), "Function can only run on Linux systems."
-    print('Doing something.')
-
-
+try:
+    def linux_interaction():
+        assert ('linux' in sys.platform), "Function can only run on Linux systems."
+        print('Doing something.')
+        raise IndentationError('IndentationError')
+except IndentationError:
+    print (f"no se por que no va el import sys")
+"""
 # Bonus Questions:
 
 # You will need to make some research on dictionary comprehension to solve the following questions
-
+"""
 #21.  Write a function that asks for an integer and prints the square of it. 
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
+def square(number):
+    if square(number) != int:
+        raise ValueError("You should pass number as an int")
+        raise RecursionError("Error")
+    return f"The square of your number is  {number**2}"
 
-
-
-
+while True:
+    try:
+        elija = input("Choose a number ")
+        print(square(int(elija)))
+        break
+    except ValueError:
+        print ("Dale")
+#    else:    
+        print("vueva a intentar")
+#    finally:
+        print("Se acabo")
+"""
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
 
-
+results = [e for e in range(1,1000) for d in range(2,9) if e%d == 0]
+print(set(results))
 
 
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
-Total_Marks = int(input("Enter Total Marks Scored: ")) 
-Num_of_Sections = int(input("Enter Num of Sections: "))
-"""
+#Total_Marks = int(input("Enter Total Marks Scored: ")) 
+#Num_of_Sections = int(input("Enter Num of Sections: "))
