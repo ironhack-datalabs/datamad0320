@@ -64,6 +64,8 @@ teststring = 'Find all of the words in a string that are monosyllabic'
 
 
 
+
+
 #9. Find all the consonants in the sentence 'The quick brown fox jumped over the lazy dog'.
 # Use consonants as the name of the list.
 # Remember to use list comprehensions and to print your results.
