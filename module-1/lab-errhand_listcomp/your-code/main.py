@@ -1,17 +1,17 @@
 #Example: 
-"""
+
 eggs = (1,3,8,3,2)
 
 my_listComprehension = [1/egg for egg in eggs]
 
 print(my_listComprehension)
-"""
+
 #Insert here the module/library import statements 
 import math
 import random
 import os
 import sys
-"""
+
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 
@@ -87,7 +87,7 @@ print(consonants)
 
 
 
-
+## NO SE POR QUE NO LEE EL ARCHIVO :(
 #10. Find the folders you have in your datamad0320 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
@@ -130,8 +130,8 @@ print(floats)
 try:
     for i in ['a','b','c']:
         print i**2
-      raise ErrorSyntax(ErrorSyntax)  
-except ErrorSyntax:
+        raise SyntaxError("ErrorSyntax")  
+except SyntaxError:
     print(f"Falla en la sintaxix")
    
 
@@ -143,7 +143,7 @@ try:
     x = 5
     y = 0
     z = x/y
-    reaise ZeroDivisionError("ZeroDivisionError")
+    raise ZeroDivisionError("ZeroDivisionError")
 except ZeroDivisionError:
     
     print (f"El error a arreglar es de indole ZeroDivisionError ")   
@@ -183,7 +183,7 @@ while True:
         name = input("Cual es su nombre ")
         age = input("Que edad tienes ")
         print(saluda(name,int(age)))
-        raise ValueError("ValueError")
+        
         break
     except ValueError:
         print("Lo siento, has metido un dato mal, intentalo de buevo")
@@ -230,7 +230,7 @@ try:
         raise IndentationError('IndentationError')
 except IndentationError:
     print (f"no se por que no va el import sys")
-"""
+
 # Bonus Questions:
 
 # You will need to make some research on dictionary comprehension to solve the following questions
@@ -239,9 +239,9 @@ except IndentationError:
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 def square(number):
-    if square(number) != int:
+    if type(number) != int:
         raise ValueError("You should pass number as an int")
-        raise ValueError("Error")
+        
     return f"The square of your number is  {number**2}"
 
 while True:
@@ -250,11 +250,8 @@ while True:
         print(square(int(elija)))
         break
     except :
-        print ("Dale")
-#    else:    
-        print("vueva a intentar")
-#    finally:
-        print("Se acabo")
+        print(F"Vuelve a intentarlo")
+
 
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
@@ -262,7 +259,7 @@ while True:
 results = [e for e in range(1,1000) for d in range(2,9) if e%d == 0]
 print(set(results))
 
-"""
+
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
