@@ -7,8 +7,8 @@ my_listComprehension = [1/egg for egg in eggs]
 print(my_listComprehension)
 
 #Insert here the module/library import statements 
-
-
+import os
+from random import randrange
 
 
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
@@ -99,6 +99,7 @@ print(consonant)
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
+files=[e for e in os.listdir('/home/david/ironhack/datamad0320')]
 
 
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
@@ -106,6 +107,7 @@ print(consonant)
 # Remember to use list comprehensions and to print your results
 
 
+random_lists=[[randrange(100) for i in range(10)] for i in range(4)]
 
 
 #12. Flatten the following list of lists. Use flatten_list as the name of the output.
@@ -113,6 +115,9 @@ print(consonant)
 
 list_of_lists = [[1,2,3],[4,5,6],[7,8,9]]
 
+flatten_list=[e for sublist in list_of_lists for e in sublist]
+
+print(flatten_list)
 
 
 #13. Convert the numbers of the following nested list to floats. Use floats as the name of the list. 
@@ -122,8 +127,9 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 ['30', '20', '30', '50', '10', '30', '20', '20', '20'], ['100', '100'], ['100', '100', '100', '100', '100'], \
 ['100', '100', '100', '100']]
 
+floats=[float(e) for sublist in list_of_lists for e in sublist]
 
-
+print (floats)
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
