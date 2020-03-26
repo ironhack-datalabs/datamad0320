@@ -103,23 +103,33 @@ print(consonants)
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
 
+import random
 
+random_lists_2 = [random.sample(range(0,100), k=10) for _ in range(4)]
 
+print(random_lists_2)
 
 #12. Flatten the following list of lists. Use flatten_list as the name of the output.
 # Remember to use list comprehensions and to print your results
 
-####list_of_lists = [[1,2,3],[4,5,6],[7,8,9]]
+list_of_lists = [[1,2,3],[4,5,6],[7,8,9]]
+
+flatten_list = [x for e in list_of_lists for x in e]
+
+print(flatten_list )
 
 
 
 #13. Convert the numbers of the following nested list to floats. Use floats as the name of the list. 
 # Remember to use list comprehensions and to print your results.
 
-####list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', '20'], \
-####['30', '20', '30', '50', '10', '30', '20', '20', '20'], ['100', '100'], ['100', '100', '100', '100', '100'], \
-####['100', '100', '100', '100']]
+list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', '20'], \
+['30', '20', '30', '50', '10', '30', '20', '20', '20'], ['100', '100'], ['100', '100', '100', '100', '100'], \
+['100', '100', '100', '100']]
 
+    
+floats = [float(x) for e in list_of_lists for x in e]
+print(floats)
 
 
 
