@@ -14,13 +14,15 @@ print(my_listComprehension)
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 
-
+square = [e**2 for e in range(21)]
+print(square)
 
 
 #2. Calculate the first 50 power of two. Use power_of_two as the name of the list.
 # Remember to use list comprehensions and to print your results
 
-
+power_of_two = [e**2 for e in range(51)]
+print(power_of_two)
 
 
 #3. Calculate the square root of the first 100 numbers. Use sqrt as the name of the list.
