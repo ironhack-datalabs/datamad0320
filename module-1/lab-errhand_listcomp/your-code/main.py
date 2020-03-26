@@ -57,15 +57,15 @@ print(divisible_by_seven)
 # You can use the following test string but feel free to modify at your convenience
 
 teststring = 'Find all of the words in a string that are monosyllabic'
-vocals=["a","e","i","o","u"]
-non_vowels[ e for e in teststring if e not in vocals]
+vocals=["a","e","i","o","u"," "]
+non_vowels=[ e for e in teststring if e not in vocals]
 print(non_vowels)
 
 #8. Find the capital letters (and not white space) in the sentence 'The Quick Brown Fox Jumped Over The Lazy Dog'. 
 # Use capital_letters as the name of the list.  
 # Remember to use list comprehensions and to print your results
 frase='The Quick Brown Fox Jumped Over The Lazy Dog'
-capital_letters=[e for e in frase if ord(e)>64 and ord(e)<91]
+capital_letters=[e for e in frase if ord(e)>64 and ord(e)<91 and e !=""]
 print(capital_letters)
 
 #9. Find all the consonants in the sentence 'The quick brown fox jumped over the lazy dog'.
@@ -91,7 +91,7 @@ print(files)
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
 
-random_lists=[[random.choice (range(1,101) for x in range(10))]for e in range(4) ]
+random_lists= [  [random.choice(range(1,101)) for x in range(10)] for e in range(4)]
 print(random_lists)
 
 
