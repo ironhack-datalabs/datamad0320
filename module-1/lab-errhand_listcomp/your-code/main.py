@@ -1,53 +1,68 @@
 #Example: 
 
+"""
 eggs = (1,3,8,3,2)
 
 my_listComprehension = [1/egg for egg in eggs]
 
 print(my_listComprehension)
 
-#Insert here the module/library import statements 
-
-
-
-
+"""
+"""
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 
+square = [x ** 2 for x in range(1,21)]
 
+print(square)
 
-
+"""
+"""
 #2. Calculate the first 50 power of two. Use power_of_two as the name of the list.
 # Remember to use list comprehensions and to print your results
 
+power_of_two = [2 ** x for x in range(0,50)]
 
+print (power_of_two)
 
-
+"""
+"""
 #3. Calculate the square root of the first 100 numbers. Use sqrt as the name of the list.
 # You will probably need to install math library with pip and import it in this file.  
 # Remember to use list comprehensions and to print your results
 
+import math
+sqrt = [math.sqrt(e) for e in list(range(100))]
 
+print(sqrt)
 
-
+"""
+"""
 #4. Create this list [-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0]. Use my_list as the name of the list.
 # Remember to use list comprehensions and to print your results
 
+my_list = [-x for x in range(10,-1,-1)]
+print(my_list)
 
-
-
+"""
+"""
 #5. Find the odd numbers from 1-100. Use odds as the name of the list. 
 # Remember to use list comprehensions and to print your results
 
+odds =[x for x in range(1,101,+2)]
+print(odds)
 
 
-
+"""
 #6. Find all of the numbers from 1-1000 that are divisible by 7. Use divisible_by_seven as the name of the list.
 # Remember to use list comprehensions and to print your results
 
 
+divisible_by_seven = [int(x) for x/7 in range (1000)] 
+print(divisible_by_seven)
 
 
+"""
 #7. Remove all of the vowels in a string. Hint: make a list of the non-vowels. Use non_vowels as the name of the list.
 # Remember to use list comprehensions and to print your results
 # You can use the following test string but feel free to modify at your convenience
@@ -72,7 +87,7 @@ teststring = 'Find all of the words in a string that are monosyllabic'
 
 
 
-#10. Find the folders you have in your madrid-oct-2018 local repo. Use files as name of the list.  
+#10. Find the folders you have in your datamad0320-A local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
@@ -106,7 +121,7 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 
 
 for i in ['a','b','c']:
-    print i**2
+    print (i**2)
 
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
@@ -148,8 +163,8 @@ f.write('Test write this')
 #Hint: the file could not exist and the data could not be convertable to int
 
 fp = open('myfile.txt')
-    line = f.readline()
-    i = int(s.strip())
+line = f.readline()
+i = int(s.strip())
 
 
 
@@ -188,4 +203,4 @@ def linux_interaction():
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: "))
 
-
+"""
