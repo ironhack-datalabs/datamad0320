@@ -205,24 +205,12 @@ while True:
     except ZeroDivisionError:
         print("Another number can't be 0, try again")
 
-"""
+
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
-h=["hola","gola","a","asdfa"]
-result=[e for e in range(1,1000) if (e % 2 == 0) or (e % 3 == 0) or (e % 4 == 0)or (e % 5 == 0) or (e % 6 == 0) or (e % 7 == 0) or (e % 8 == 0) or (e % 9 == 0)]
-#results=[number for number in range(1, 101) if number % 2 == 0 if number % 5 == 0]
+
+result=[e for e in range(1,1000) if (e % 2 == 0) or (e % 3 == 0) or (e % 4 == 0) or (e % 5 == 0) or (e % 6 == 0) or (e % 7 == 0) or (e % 8 == 0) or (e % 9 == 0)]
 print(result)
-# def div(x):
-#     for n in x:
-#         s=[]
-#         if n % range(2,9) != 0:
-#             s.append(n)
-#     print(s)
-
-# results=[div(range(100))]    
-#results=[n for n in range(100) if (n % 3 != 0)]
-
-
 
 """
 # 23. Define a customised exception to handle not accepted values. 
@@ -232,4 +220,4 @@ print(result)
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: "))
 
-"""
+
