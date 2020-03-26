@@ -1,5 +1,5 @@
 #Example: 
-
+"""
 eggs = (1,3,8,3,2)
 
 my_listComprehension = [1/egg for egg in eggs]
@@ -7,16 +7,17 @@ my_listComprehension = [1/egg for egg in eggs]
 print(my_listComprehension)
 
 #Insert here the module/library import statements 
-
+"""
 
 
 
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 
+square =[e**2  for e in range(21)]
+print (square)
 
-
-
+"""
 #2. Calculate the first 50 power of two. Use power_of_two as the name of the list.
 # Remember to use list comprehensions and to print your results
 
@@ -188,4 +189,4 @@ def linux_interaction():
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: "))
 
-
+"""
