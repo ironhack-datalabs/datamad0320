@@ -191,7 +191,7 @@ while True:
         break
     except:
         print("Perdona, has metido un dato mal, vuelve a intentarlo")
-        
+
 
 
 
@@ -211,10 +211,13 @@ except Exception as error:
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
 
-##fp = open('myfile.txt')
-  ##  line = f.readline()
-   ## i = int(s.strip())
-
+try:
+    fp = open('myfile.txt')
+    line = f.readline()
+    i = int(s.strip())
+except Exception as error:
+    print(error, type(error))
+    print("Please check the the file or directory name and do it again")
 
 
 
