@@ -187,7 +187,7 @@ try:
 except Exception:
     print('This file doesn\'t exist')
 
-#I've found on documentartion an FileNotFoundError but it doesn't compile on the terminal (althought it does on jupyter)
+#I've found on documentation an FileNotFoundError but it doesn't compile on the terminal (althought it does on jupyter)
 
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
@@ -252,7 +252,7 @@ print(result)
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
-Total_Marks = int(input("Enter Total Marks Scored: ")) 
-Num_of_Sections = int(input("Enter Num of Sections: "))
+#Total_Marks = int(input("Enter Total Marks Scored: ")) 
+#Num_of_Sections = int(input("Enter Num of Sections: "))
 
 
