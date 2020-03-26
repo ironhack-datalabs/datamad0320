@@ -87,14 +87,19 @@ print(consonants)
 
 
 
-"""
+
 #10. Find the folders you have in your datamad0320 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
+file_names = []
+for file_name in os.listdir("datamad0320" ):
+    file_path = os.path.join("datamad0320" , file_name)
+    if os.path.isfile(file_path):
+        file_names.append(file_name)
+print(file_names)
+files= [next(os.walk("datamad0320"), ([],[],[]))[2]]
+print(files)
 
-os.listdir("datamad0320") 
-
-"""
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
@@ -122,37 +127,58 @@ print(floats)
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
-
-for i in ['a','b','c']:
-    print i**2
-
+try:
+    for i in ['a','b','c']:
+        print i**2
+        
+except expression as identifier:
+   
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
 #Then use a finally block to print 'All Done.'
 # Check in provided resources the type of error you may use. 
 
-x = 5
-y = 0
-
-z = x/y
-
-
+try:
+    x = 5
+    y = 0
+    z = x/y
+    
+except ZeroDivisionError:
+    print (f"El erro a arreglar es de indole ZeroDivisionError ")   
+print(f'All Done')
 
 
 #16. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
+try:
+    abc=[10,20,20]
+    print(abc[3])
+except IndexError:
+    
 
-abc=[10,20,20]
-print(abc[3])
 
-
+"""
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
+def saluda(nombre, edad):
+    if type(edad) != int:
+        raise ValueError("You should pass age as an int")
+    if type(nombre) != str:
+        raise ValueError("You should pass a string as a name")
+    return "Hola "+ nombre + " dentro de 10 años tendras" + str(edad+10)
+
+while True:
+    try:
+        name = input("Cual es su nombre ")
+        age = input("Que edad tienes ")
+        print(saluda(name,int(age)))
+        break
+    except:
+        print("Lo siento, has metido un dato mal, intentalo de buevo")
 
 
-
-
+"""
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
@@ -205,5 +231,4 @@ def linux_interaction():
 
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: "))
-
 """
