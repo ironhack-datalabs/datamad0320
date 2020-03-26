@@ -97,6 +97,12 @@ print(consonants)
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
+import os
+
+files = [e for e in os.listdir('../../..')]
+print(files)
+    
+
 
 
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
@@ -226,9 +232,14 @@ except Exception as error:
 # Handle this exception using try and except blocks. 
 # You will probably need to import sys 
 
-##def linux_interaction():
-  ##  assert ('linux' in sys.platform), "Function can only run on Linux systems."
-   ## print('Doing something.')
+import sys
+
+try:
+    def linux_interaction():
+        assert ('linux' in sys.platform), "Function can only run on Linux systems." #assert <condition>,<error message>
+        print('Doing something.')
+except Exception as error:
+    print(error, type(error))
 
 
 # Bonus Questions:
