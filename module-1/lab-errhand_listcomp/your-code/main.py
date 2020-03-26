@@ -10,6 +10,7 @@ print(my_listComprehension)
 import math
 import os
 import random
+import sys
 
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
@@ -81,7 +82,8 @@ print(consonants)
 #10. Find the folders you have in your datamad0320 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
-files = [e for e in os.listdir('../../..') if os.path.isdir(e)]
+myfolder = os.path.curdir 
+files = [f for f in next(os.walk(myfolder+'/datamad0320' ))[1]]
 print("Files: \n",files)
 
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
@@ -146,7 +148,7 @@ finally:
 try:
     abc=[10,20,20]
     print(abc[3])
-except LookupError:
+except IndexError:
     print("Index Error: list index out of range")
 
 
@@ -171,18 +173,29 @@ else:
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
-#f = open('testfile','r')
-#f.write('Test write this')
+try:
 
+    f = open('testfile','r')
+    f.write('Test write this')
+
+except FileNotFoundError:
+        print("ERROR: File not found")
 
 
 
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
 
-#fp = open('myfile.txt')
-#    line = f.readline()
- #   i = int(s.strip())
+
+try:
+    fp = open('myfile.txt')
+    line = f.readline()
+    i = int(s.strip())
+except ValueError:
+        print("ERROR:data could not be convertable to int")
+except FileNotFoundError:
+        print("ERROR: File not found")
+        
 
 
 
@@ -193,10 +206,13 @@ else:
 # You will probably need to import sys 
 
 def linux_interaction():
-    assert ('linux' in sys.platform), "Function can only run on Linux systems."
-    print('Doing something.')
+    try:
+        assert ('linux' in sys.platform), "Function can only run on Linux systems."
+        print('Doing something.')
+    except SystemError:
+        print("ERROR: OS not Linux")
 
-
+linux_interaction()
 # Bonus Questions:
 
 # You will need to make some research on dictionary comprehension to solve the following questions
@@ -204,21 +220,30 @@ def linux_interaction():
 #21.  Write a function that asks for an integer and prints the square of it. 
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
-
-
+def squareNumber(number):
+    if type(number) != int:
+        raise ValueError("You should pass number as an int")
+    return number**2
+   
+while True:
+    try:
+        number = input("Dime un numero: ")
+        print("El cuadrado es: ",squareNumber(int(number)))
+        break
+    except:
+        print("ERROR: You should pass number as an int")
 
 
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
-
-
-
+results = [i for i in range(1,1001) if [x for x in range(2,10) if i%x == 0]]
+print(results)
 
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
-#Total_Marks = int(input("Enter Total Marks Scored: ")) 
-#Num_of_Sections = int(input("Enter Num of Sections: "))
+Total_Marks = int(input("Enter Total Marks Scored: ")) 
+Num_of_Sections = int(input("Enter Num of Sections: "))
 
 
