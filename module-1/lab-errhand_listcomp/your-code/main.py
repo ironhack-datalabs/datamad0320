@@ -181,9 +181,11 @@ except ZeroDivisionError:
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
-f = open('testfile','r')
-f.write('Test write this')
-
+try:
+    f = open('testfile','r')
+    f.write('Test write this')
+except FileNotFoundError:
+    print('This file doesn\'t exist')
 
 
 
