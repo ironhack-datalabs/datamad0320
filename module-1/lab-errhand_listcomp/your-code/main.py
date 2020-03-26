@@ -14,6 +14,7 @@ print(my_listComprehension)
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 
+square = [e**2 for e in range(20+1)]
 
 
 
