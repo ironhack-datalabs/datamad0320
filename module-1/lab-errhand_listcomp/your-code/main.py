@@ -9,7 +9,7 @@ print(my_listComprehension)
 #Insert here the module/library import statements 
 import math
 import random
-
+import os
 
 """
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
@@ -87,20 +87,21 @@ print(consonants)
 
 
 
-
+"""
 #10. Find the folders you have in your datamad0320 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
+os.listdir("datamad0320") 
 
-
+"""
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
 
 random_lists=[ e for e in random.choices(range(1,101), k=11 )]
 print(random_lists)
-"""
+
 
 #12. Flatten the following list of lists. Use flatten_list as the name of the output.
 # Remember to use list comprehensions and to print your results
@@ -108,7 +109,7 @@ print(random_lists)
 list_of_lists = [[1,2,3],[4,5,6],[7,8,9]]
 flatten_list= [ l for s in list_of_lists for l in s ]
 print(flatten_list)
-"""
+
 #13. Convert the numbers of the following nested list to floats. Use floats as the name of the list. 
 # Remember to use list comprehensions and to print your results.
 
