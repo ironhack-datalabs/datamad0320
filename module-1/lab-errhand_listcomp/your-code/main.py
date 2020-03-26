@@ -5,25 +5,27 @@ eggs = (1,3,8,3,2)
 my_listComprehension = [1/egg for egg in eggs]
 
 print(my_listComprehension)
-
-#Insert here the module/library import statements 
 """
+#Insert here the module/library import statements 
+import math
 
 
-
+"""
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 
 square =[e**2  for e in range(21)]
 print (square)
-
 """
+
 #2. Calculate the first 50 power of two. Use power_of_two as the name of the list.
 # Remember to use list comprehensions and to print your results
+e = 2
+power_of_two= [e**c for c in range(51)]
+print(power_of_two)
 
 
-
-
+"""
 #3. Calculate the square root of the first 100 numbers. Use sqrt as the name of the list.
 # You will probably need to install math library with pip and import it in this file.  
 # Remember to use list comprehensions and to print your results
