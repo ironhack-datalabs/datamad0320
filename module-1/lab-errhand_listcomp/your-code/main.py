@@ -108,7 +108,7 @@ list_of_lists = [[1,2,3],[4,5,6],[7,8,9]]
 flatten_list = [num for lista in list_of_lists for num in lista]
 print(flatten_list)
 
-#Sin hacer
+
 #13. Convert the numbers of the following nested list to floats. Use floats as the name of the list. 
 # Remember to use list comprehensions and to print your results.
 
@@ -116,19 +116,7 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 ['30', '20', '30', '50', '10', '30', '20', '20', '20'], ['100', '100'], ['100', '100', '100', '100', '100'], \
 ['100', '100', '100', '100']]
 
-floats = map(float(e), (e for lista in list_of_lists for e in lista))
-print(floats, len(floats))
-
-print(list_of_lists)
-floats = []
-for lista in list_of_lists:
-    for e in lista:
-        e = float(e)
-        floats.append(e)
-print(floats)
-
-
-floats = [float(num) for lista in list_of_lists]
+floats = [[float(i) for i in lista] for lista in list_of_lists]
 print(floats)
 
 
@@ -239,20 +227,53 @@ except Exception:
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 
+def calculo_cuadradro():
+    while True:
+        try:
+            entero = input("Por favor, introduzca un número entero: ")
+            entero = int(entero)
+        except ValueError:
+            print("Solo puedes introducir números enteros")
+        else:
+            cuadrado = entero**2
+            print(f"El resultado es {cuadrado}")
+            break
 
+calculo_cuadradro()
 
-
+Sin hacer!!!!!!!
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
 
+results = [i for i in range(1,1001) if i not in set(range(2,10))% x == 0 for x in range(2,10)]
+print(results)
+"""
 
+results = [[i for i in range (1,1001)] for x in range(2,10) if i%x==0]
+print(results)
+"""
+.difference_update(i*x) for x in rango(20)]
+x**i for x in range(2-9) for i in range(2-9)
 
 
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
-Total_Marks = int(input("Enter Total Marks Scored: ")) 
-Num_of_Sections = int(input("Enter Num of Sections: "))
+class menor2(Exception): 
+    pass
+
+while True: 
+    try:
+        Total_Marks = int(input("Enter Total Marks Scored: "))
+        Num_of_Sections = int(input("Enter Num of Sections: "))
+        if(Num_of_Sections < 2):
+            raise menor2
+        else:
+            break
+    except menor2:
+        print("El número de secciones no puede ser menor de 2")
+    except ValueError:
+        print("Debe introducir números enteros")
 
 """
