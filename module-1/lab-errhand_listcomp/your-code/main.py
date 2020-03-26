@@ -6,8 +6,9 @@ my_listComprehension = [1/egg for egg in eggs]
 
 print(my_listComprehension)
 
-#Insert here the module/library import statements 
 
+#Insert here the module/library import statements 
+import os
 
 
 
@@ -16,7 +17,7 @@ print(my_listComprehension)
 
 
 
-
+"""
 #2. Calculate the first 50 power of two. Use power_of_two as the name of the list.
 # Remember to use list comprehensions and to print your results
 
@@ -187,5 +188,5 @@ def linux_interaction():
 
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: "))
-
+"""
 
