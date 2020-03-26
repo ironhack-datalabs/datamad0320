@@ -1,4 +1,4 @@
-"""
+
 #Example: 
 
 eggs = (1,3,8,3,2)
@@ -6,14 +6,14 @@ eggs = (1,3,8,3,2)
 my_listComprehension = [1/egg for egg in eggs]
 
 print(my_listComprehension)
-"""
+
 #Insert here the module/library import statements 
 
 import math
 import os 
 import random
 import sys 
-"""
+
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 
@@ -241,19 +241,12 @@ def calculo_cuadradro():
 
 calculo_cuadradro()
 
-Sin hacer!!!!!!!
+
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
 
-results = [i for i in range(1,1001) if i not in set(range(2,10))% x == 0 for x in range(2,10)]
+results = [i for i in range(1,1001) if [x for x in range(2,10) if i%x == 0]]
 print(results)
-"""
-
-results = [[i for i in range (1,1001)] for x in range(2,10) if i%x==0]
-print(results)
-"""
-.difference_update(i*x) for x in rango(20)]
-x**i for x in range(2-9) for i in range(2-9)
 
 
 # 23. Define a customised exception to handle not accepted values. 
@@ -275,5 +268,3 @@ while True:
         print("El número de secciones no puede ser menor de 2")
     except ValueError:
         print("Debe introducir números enteros")
-
-"""
