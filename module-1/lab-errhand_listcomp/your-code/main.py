@@ -1,18 +1,16 @@
 #Example: 
-"""
 eggs = (1,3,8,3,2)
 
 my_listComprehension = [1/egg for egg in eggs]
 
 print(my_listComprehension)
-"""
+
 #Insert here the module/library import statements
 import math
 import os
 import random
 import sys
 
-"""
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 square = [e**2 for e in list(range(1,21))]
@@ -147,21 +145,19 @@ except Exception as e:
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
-def nums(n1, n2):
-    if type(n1) != int:
-        raise ValueError("You should insert an int fraction")
-    if type(n1) != float:
-        raise ValueError("You should insert an float fraction")
-    return str(n1) + str(n2)
+n1 = input("Type a number: ")
+n2 = input("Type second number: ")
 
-while True:
-    try:
-        n1 = input("Insert an int fraction: ")
-        n2 = input("Insert an float fraction: ")
-        print(nums(n1, n2))
-        break
-    except:
-        print("Your input is incorrect, try again")
+try:
+    test = int(n1)/int(n2)
+    if n2 == 0:
+        print(test)
+    elif type(n2) != int:
+        print(test)
+except Exception as err:
+    print(err, type(err))
+    
+
 
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
@@ -178,40 +174,64 @@ except Exception as e2:
 
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
-try:
-    fp = open('myfile.txt')
-except Exception as e:
-    print(e, type(e))
-try:
-    line = f.readline()
-except Exception as e:
-    print(e, type(e))
-try:
-    i = int(s.strip())
-except Exception as e:
-    print(e, type(e))
-
+while True:
+    try:
+        fp = open('myfile.txt')
+        
+    except Exception as e:
+        print(e, type(e))
+        try:
+            line = f.readline()
+            
+        except Exception as e:
+            print(e, type(e))
+            try:
+                i = int(s.strip())
+            except Exception as e:
+                print(e, type(e))
+                break
 
 #20. The following function can only run on a Linux system. 
 # The assert in this function will throw an exception if you call it on an operating system other than Linux. 
 # Handle this exception using try and except blocks. 
 # You will probably need to import sys 
 
-def linux_interaction():
+def linux_interaction(s):
     assert ('linux' in sys.platform), "Function can only run on Linux systems."
     print('Doing something.')
+
+
+
+try:
+    s = print(sys.platform)
+    linux_interaction(s)
+except Exception as e:
+    print(e, type(e))
+
 
 
 # Bonus Questions:
 
 # You will need to make some research on dictionary comprehension to solve the following questions
 
+
 #21.  Write a function that asks for an integer and prints the square of it. 
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
+def ask_int(n):
+    s = n**2
+    return s
 
+while True:
+    try:
+        n = input("Please enter an integer: ")
+        n = int(n)
+        print(ask_int(n))
+        break
+    except Exception as e:
+        print(e, "That is not an int... check maths module")
+print("Yeah that it is !!")
 
-"""
 
 
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
@@ -221,7 +241,6 @@ divisible = [e for e in list(range(1,1001)) if [i for i in list(range(2,10)) if 
 print(divisible)
 
 
-"""
 
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
@@ -229,5 +248,15 @@ print(divisible)
 
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: "))
-"""
 
+
+def saluda(Num_of_Sections):
+    if Num_of_Sections < 2:
+        raise ValueError("Use a num equal or higher than 2")
+    return f"Well done! {Num_of_Sections} is a valid num"
+
+try:
+    print(saluda(Num_of_Sections))
+except Exception as e:
+    print(e, type(e))
+"""
