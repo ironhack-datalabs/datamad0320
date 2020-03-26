@@ -29,32 +29,43 @@ print(power_of_two)
 # You will probably need to install math library with pip and import it in this file.  
 # Remember to use list comprehensions and to print your results
 
-
+import math
+ 
+sqrt = [math.sqrt(e) for e in list(range(100))]
+print(sqrt)
 
 
 #4. Create this list [-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0]. Use my_list as the name of the list.
 # Remember to use list comprehensions and to print your results
 
-
+my_list = [e for e in list(range(-10,0))]
+print(my_list)
 
 
 #5. Find the odd numbers from 1-100. Use odds as the name of the list. 
 # Remember to use list comprehensions and to print your results
 
-
+odds = [e for e in list(range(1,100)) if e%2!=0]
+print(odds)
 
 
 #6. Find all of the numbers from 1-1000 that are divisible by 7. Use divisible_by_seven as the name of the list.
 # Remember to use list comprehensions and to print your results
 
-
+divisible_by_seven = [e for e in list(range(1,100)) if e%7==0]
+print(divisible_by_seven)
 
 
 #7. Remove all of the vowels in a string. Hint: make a list of the non-vowels. Use non_vowels as the name of the list.
 # Remember to use list comprehensions and to print your results
 # You can use the following test string but feel free to modify at your convenience
 
-####teststring = 'Find all of the words in a string that are monosyllabic'
+teststring = 'Find all of the words in a string that are monosyllabic'
+
+vowels = ['a', 'e', 'i', 'o', 'u']
+
+non_vowel = [i for i in teststring if i not in vowels]
+print(non_vowel)
 
 
 
@@ -63,14 +74,22 @@ print(power_of_two)
 # Use capital_letters as the name of the list.  
 # Remember to use list comprehensions and to print your results
 
+sentence = 'The Quick Brown Fox Jumped Over The Lazy Dog'
 
+capital_letters = [e for e in sentence if e.isupper()]
+print(capital_letters)
 
 
 #9. Find all the consonants in the sentence 'The quick brown fox jumped over the lazy dog'.
 # Use consonants as the name of the list.
 # Remember to use list comprehensions and to print your results.
 
+sentence = 'The Quick Brown Fox Jumped Over The Lazy Dog'
 
+vowels = ['a', 'e', 'i', 'o', 'u']
+
+consonants = [i for i in sentence if i not in vowels]
+print(consonants)
 
 
 
