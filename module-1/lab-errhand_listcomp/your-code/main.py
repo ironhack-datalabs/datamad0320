@@ -7,7 +7,7 @@ my_listComprehension = [1/egg for egg in eggs]
 print(my_listComprehension)
 """
 #Insert here the module/library import statements 
-import math
+import math, random
 
 
 """
@@ -55,28 +55,34 @@ print(odds)
 divisible_by_seven = [e for e in range(1,1001) if e%7 ==0]
 print(divisible_by_seven)
 
-"""
+
 #7. Remove all of the vowels in a string. Hint: make a list of the non-vowels. Use non_vowels as the name of the list.
 # Remember to use list comprehensions and to print your results
 # You can use the following test string but feel free to modify at your convenience
 
 teststring = 'Find all of the words in a string that are monosyllabic'
-non_vowels = [e for e in teststring if ('a','e','i' ,'o', 'u') != e ]
+non_vowels = [e for e in teststring  if len([i for i in e if i in ['a','e','i' ,'o', 'u']])  == 0 ]
 print(non_vowels)
 
 
-"""
+
+
 #8. Find the capital letters (and not white space) in the sentence 'The Quick Brown Fox Jumped Over The Lazy Dog'. 
 # Use capital_letters as the name of the list.  
 # Remember to use list comprehensions and to print your results
 
-
+setence = ('The Quick Brown Fox Jumped Over The Lazy Dog')
+capital_letters =[e for e in setence if e.lower() == e]
+print ( capital_letters)
 
 
 #9. Find all the consonants in the sentence 'The quick brown fox jumped over the lazy dog'.
 # Use consonants as the name of the list.
 # Remember to use list comprehensions and to print your results.
 
+sentence = ('The quick brown fox jumped over the lazy dog')
+consonants = [e for e in sentence  if len([i for i in e if i in ['a','e','i' ,'o', 'u']])  > 0 ]
+print(consonants)
 
 
 
@@ -86,14 +92,14 @@ print(non_vowels)
 # Remember to use list comprehensions and to print your results.
 
 
-
+"""
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
 
-
-
-
+random_lists=[(e for random.range(1,101))*4]
+print(random_lists)
+"""
 #12. Flatten the following list of lists. Use flatten_list as the name of the output.
 # Remember to use list comprehensions and to print your results
 
