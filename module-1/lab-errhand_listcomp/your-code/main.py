@@ -240,7 +240,18 @@ print("Ejercicio 20:\n", linux_interaction())
 #21.  Write a function that asks for an integer and prints the square of it. 
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
-
+def my_fun(x):
+    return x**2
+            
+while True:
+    try:
+        x = int(input("Por favor, introduce un número entero: "))
+    #el input obliga a convertir cualquier dato introducido a int, si no se puede, saltará un ValueError
+    except ValueError:
+        print("Vaya! El dato está mal. Prueba de nuevo...")
+    else:
+        print(my_fun(x))
+        break
 
 
 
