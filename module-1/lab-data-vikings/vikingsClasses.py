@@ -29,6 +29,18 @@ class Viking (Soldier):
         # 2nd Viking property: strength (inherit from Soldier)
         self.name=viking_name   #3rd Viking property: name
 
+    # Method "attack" inherit from Soldier
+
+    # Method "receiveDamage" is different from the one inherit from Soldier
+    def receiveDamage(self, damage):
+        self.health+= (-damage)
+        if self.health>0:
+            return (f"{self.name} has received {damage} points of damage")
+
+
+
+
+
 # Saxon
 
 
