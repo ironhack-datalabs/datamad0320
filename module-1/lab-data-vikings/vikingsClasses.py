@@ -28,9 +28,9 @@ class Viking (Soldier):
     # Construction function with three arguments: name, health, and strength
     def __init__(self, viking_name, viking_health, viking_strength): #Por qué en este orden??
         #super().__init__(self, viking_health, viking_strength)
-        self.name=viking_name   #3rd Viking property: name
-        self.health=viking_health       # 1st Viking property: health
-        self.strength=viking_strength   # 2nd Viking property: strength
+        self.name=viking_name           # 1st Viking property: name
+        self.health=viking_health       # 2nd Viking property: health
+        self.strength=viking_strength   # 3rd Viking property: strength
         
     # Method "attack()" inherit from Soldier
 
@@ -49,11 +49,27 @@ class Viking (Soldier):
 
 
 
+
 # Saxon
 
+# class Saxon is a subclass of Soldier.
+class Saxon (Soldier):
+    def __init__(self, saxon_health, saxon_strength):
+        self.health=saxon_health       # 1st Saxon property: health
+        self.strength=saxon_strength   # 2nd Saxon property: strength
 
-class Saxon:
-    pass
+    # Method "attack()" inherit from Soldier
+
+    # Method "receiveDamage()" is different from the one inherit from Soldier
+    def receiveDamage(self, damage):
+        self.health += (-damage)
+
+        if self.health >0:
+            return f"A Saxon has received {damage} points of damage"
+        else:
+            return f"A Saxon has died in combat"
+
+
 
 # War
 
