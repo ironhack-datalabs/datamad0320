@@ -1,6 +1,7 @@
 
 # Soldier
 
+a=1
 
 class Soldier:
     pass
