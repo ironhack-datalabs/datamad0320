@@ -43,12 +43,28 @@ class Viking (Soldier):
             return f"{self.name} has died in act of combat"
     def battleCry(self):
         return "Odin Owns You All!"
-"""
+
 # Saxon
 
 
-class Saxon:
-    pass
+class Saxon(Soldier):
+    def __init__(self,health, strength)
+        super().__init(self, attack)
+    def attack(self,attackSaxo):
+        self.attackSaxo= attackSaxo 
+        return attackSaxo
+    def receiveDamage(self,damageSaxo):
+        self.damageSaxo = damageSaxo
+        if self.health > self.damageSaxo:
+            self.health -= self.damageSaxo
+            
+            return f"A Saxon has received {damageSaxo} points of damage"
+        else :
+            return f"A Saxon has died in act of combat"   
+
+
+
+"""
 
 # War
 
