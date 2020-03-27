@@ -26,12 +26,12 @@ class Viking:
     
     def receiveDamage(self, damage):
         self.health -= damage
-        if health == 0:
+        if self.health == 0:
             return (f"{name} has died in act of combat")
         else:
             return (f"{name} has received {damage} points of damage")
     
-    def battleCry():
+    def battleCry(self):
         return f"Odin Owns You All!"
 
 
