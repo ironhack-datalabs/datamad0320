@@ -1,6 +1,6 @@
 
 # Soldier
-
+ ##mod
 
 class Soldier:
     pass
