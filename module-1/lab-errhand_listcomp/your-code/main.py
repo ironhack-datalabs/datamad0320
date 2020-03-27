@@ -1,4 +1,4 @@
-"""
+
 #Example: 
 
 eggs = (1,3,8,3,2)
@@ -6,14 +6,15 @@ eggs = (1,3,8,3,2)
 my_listComprehension = [1/egg for egg in eggs]
 
 print(my_listComprehension)
-"""
+
 #Insert here the module/library import statements 
 import math
 import os
 import random
+import sys
 
 
-"""
+
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 
@@ -115,7 +116,7 @@ print("Ejercicio 12: \n", flatten_list)
 
 
 
-"""
+
 #13. Convert the numbers of the following nested list to floats. Use floats as the name of the list. 
 # Remember to use list comprehensions and to print your results.
 
@@ -126,55 +127,94 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 floats = [float(e) for sublista in list_of_lists for e in sublista]
 print("Ejercicio 13: \n", floats)
 
-"""
+
 #14. Handle the exception thrown by the code below by using try and except blocks. 
+print("Ejercicio 14:")
+try:
+    for i in ['a','b','c']:
+        print (i**2)
+except Exception as error:
+    # Mostrar el error por consola
+    print(error, type(error))
 
-
-for i in ['a','b','c']:
-    print i**2
 
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
 #Then use a finally block to print 'All Done.'
 # Check in provided resources the type of error you may use. 
-
-x = 5
-y = 0
-
-z = x/y
-
+print("Ejercicio 15:")
+try:
+    x = 5
+    y = 0
+    z = x/y
+except Exception as error:
+    print("ERROR!!! --> ", error)
 
 
 
 #16. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
-
-abc=[10,20,20]
-print(abc[3])
+print("Ejercicio 16:")
+try:
+    abc=[10,20,20]
+    print(abc[3])
+except Exception as error:
+    print("ERROR!!! --> ", error)
 
 
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
+print("Ejercicio 17:")
+# He creado una función que hace la división entre dos valores y 
+# que me muestre error si alguno de los valores no es un integer o float, y si alguno es 0
 
+def dividir(x, y):
+    if (type(x) != (int or float)) and (type(y) != (int or float)):
+        raise ValueError("Debes introducir un número (entero o decimal)")
+    if x == 0 or y == 0 :
+        raise ValueError("Tu número debe ser distinto de 0, so lerdx")
+    return x/y
+
+x = 5
+y = 2
+
+dividir(x,y)
 
 
 
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
-
-f = open('testfile','r')
-f.write('Test write this')
+print("Ejercicio 18:")
+try:
+    f = open('testfile','r')
+except Exception as error: 
+    print("ERROR!!! --> ", error)
+try:
+    f.write('Test write this')
+except Exception as error:
+     print("ERROR!!! --> ", error)
 
 
 
 
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
-
-fp = open('myfile.txt')
+print("Ejercicio 19:")
+try:
+    fp = open('myfile.txt')
+except Exception as error: 
+    print(error)
+try:
     line = f.readline()
+except Exception as error: 
+    print(error)
+try:    
     i = int(s.strip())
+# Meto en except el error por no existir la variable 'NameError'
+# y el error de que el valor no se peuda convertir en integer 'ValueError'
+except(NameError, ValueError):
+    print('No está definida la variable i. La variable s no puede ser convertida a integer')
 
 
 
@@ -185,8 +225,12 @@ fp = open('myfile.txt')
 # You will probably need to import sys 
 
 def linux_interaction():
-    assert ('linux' in sys.platform), "Function can only run on Linux systems."
-    print('Doing something.')
+    try:
+        assert ('linux' in sys.platform), "Function can only run on Linux systems."
+    except:
+        print('Doing something.')
+    
+print("Ejercicio 20:\n", linux_interaction())
 
 
 # Bonus Questions:
@@ -202,7 +246,8 @@ def linux_interaction():
 
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
-
+results = [i for i in range(1,1001) if (i%j==0 for j in range(2,10))]
+print("Ejercicio 22: \n", results)
 
 
 # NEINN!!! NEEINN! NEEEIN!!!
@@ -212,5 +257,5 @@ def linux_interaction():
 
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: "))
-"""
+
 
