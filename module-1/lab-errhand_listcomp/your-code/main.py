@@ -255,7 +255,7 @@ while True:
             else:
                 break
     except:
-            print("ERROR: You should pass number as an int an the number of sections can not be less than 2")
+            print("ERROR: You should pass number as an int and the number of sections can not be less than 2")
 print("Successful")
 
 
