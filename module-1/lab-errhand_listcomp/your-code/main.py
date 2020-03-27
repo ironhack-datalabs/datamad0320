@@ -82,9 +82,9 @@ print(consonants)
 #10. Find the folders you have in your datamad0320 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
-myfolder = os.path.curdir 
-files = [f for f in next(os.walk(myfolder+'/datamad0320' ))[1]]
+files = [f for f in next(os.walk('../../..' ))[1]]
 print("Files: \n",files)
+
 
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
