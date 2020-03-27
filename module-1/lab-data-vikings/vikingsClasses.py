@@ -8,11 +8,11 @@ class Soldier:
         self.health=soldier_health       # 1st Soldier property: health
         self.strength=soldier_strength   # 2nd Soldier property: strength
 
-    # Method 1 with 0 arguments
+    # Method "attack()" with 0 arguments
     def attack(self):
         return self.strength
     
-    # Method 2 with one argument: "damage"
+    # Method "receiveDamage()" with one argument: "damage"
     def receiveDamage(self, damage):
         self.health+= (-damage)
 
@@ -21,23 +21,31 @@ class Soldier:
 
 # Viking
 
+#METER SUPER INIT EN LA __INIT__
+
 # class Viking is a subclass of Soldier.
 class Viking (Soldier):
     # Construction function with three arguments: name, health, and strength
-    def __init__(self, viking_name):
-        # 1st Viking property: health (inherit from Soldier)
-        # 2nd Viking property: strength (inherit from Soldier)
+    def __init__(self, viking_name, viking_health, viking_strength): #Por qué en este orden??
+        #super().__init__(self, viking_health, viking_strength)
         self.name=viking_name   #3rd Viking property: name
+        self.health=viking_health       # 1st Viking property: health
+        self.strength=viking_strength   # 2nd Viking property: strength
+        
+    # Method "attack()" inherit from Soldier
 
-    # Method "attack" inherit from Soldier
-
-    # Method "receiveDamage" is different from the one inherit from Soldier
+    # Method "receiveDamage()" is different from the one inherit from Soldier
     def receiveDamage(self, damage):
-        self.health+= (-damage)
-        if self.health>0:
-            return (f"{self.name} has received {damage} points of damage")
+        self.health += (-damage)
 
+        if self.health >0:
+            return f"{self.name} has received {damage} points of damage"
+        else:
+            return f"{self.name} has died in act of combat"
 
+    # Method "battleCry()"
+    def battleCry(self):
+        return f"Odin Owns You All!"
 
 
 
