@@ -10,7 +10,7 @@ class Soldier:
         return self.strength
     
     def receiveDamage(self, damage):
-        self.health = health - damage
+        self.health -= damage
 
 
 # Viking
@@ -25,7 +25,7 @@ class Viking:
         return self.strength
     
     def receiveDamage(self, damage):
-        self.health = health - damage
+        self.health -= damage
         if health == 0:
             return (f"{name} has died in act of combat")
         else:
@@ -45,8 +45,8 @@ class Saxon(Soldier):
         super().attack(self)
 
     def receiveDamage(self, damage):
-        self.health == health - damage
-        if health = 0:
+        self.health -= damage
+        if health == 0:
             return (f"A Saxon has died in act of combat")
         else:
             return (f"A Saxon has received {damage} points of damage")
