@@ -243,7 +243,19 @@ print(results)
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
-Total_Marks = int(input("Enter Total Marks Scored: ")) 
-Num_of_Sections = int(input("Enter Num of Sections: "))
+class myCustomisedException(Exception):
+     pass
+
+while True:
+    try:
+            Total_Marks = int(input("Enter Total Marks Scored: ")) 
+            Num_of_Sections = int(input("Enter Num of Sections: "))
+            if(Num_of_Sections < 2):
+                raise myCustomisedException("The number of sections can not be less than 2")
+            else:
+                break
+    except:
+            print("ERROR: You should pass number as an int an the number of sections can not be less than 2")
+print("Successful")
 
 
