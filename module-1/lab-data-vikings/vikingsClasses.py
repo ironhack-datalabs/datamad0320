@@ -1,7 +1,6 @@
 
 # Soldier
 
-
 class Soldier:
     # constructor function with two arguments: "soldier_health" and "soldier_strength"
     # argument "self" by defect
@@ -17,11 +16,18 @@ class Soldier:
     def receiveDamage(self, damage):
         self.health+= (-damage)
 
+
+
+
 # Viking
 
-
-class Viking:
-    pass
+# class Viking is a subclass of Soldier.
+class Viking (Soldier):
+    # Construction function with three arguments: name, health, and strength
+    def __init__(self, viking_name):
+        # 1st Viking property: health (inherit from Soldier)
+        # 2nd Viking property: strength (inherit from Soldier)
+        self.name=viking_name   #3rd Viking property: name
 
 # Saxon
 
