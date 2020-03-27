@@ -7,13 +7,13 @@ my_listComprehension = [1/egg for egg in eggs]
 print(my_listComprehension)
 """
 #Insert here the module/library import statements 
-#import math
-#from os import listdir
-#from os.path import isdir, join
-#import random
-#import sys
+import math
+from os import listdir
+from os.path import isdir, join
+import random
+import sys
 
-"""
+
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 
@@ -76,7 +76,7 @@ print(divisible_by_seven)
 teststring = 'Find all of the words in a string that are monosyllabic'
 
 vowels=["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
-non_vowels=[letter for letter in teststring if letter not in vowels]
+non_vowels=[e for e in teststring if e not in vowels]
 print(*non_vowels)
 
 
@@ -88,8 +88,8 @@ print(*non_vowels)
 
 sentence='The Quick Brown Fox Jumped Over The Lazy Dog'
 
-capital_letters=[letter for letter in sentence if letter.isupper()]
-print(capital_letters)
+capital_letters=[e for e in sentence if e.isupper()]
+print(*capital_letters)
 
 
 
@@ -98,9 +98,8 @@ print(capital_letters)
 # Use consonants as the name of the list.
 # Remember to use list comprehensions and to print your results.
 
-vowels=["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
 sentence='The quick brown fox jumped over the lazy dog'
-consonants=[letter for letter in sentence if letter not in vowels + [' ']]
+consonants=[e for e in sentence if e not in vowels + [' ']]
 print(consonants)
 
 
@@ -110,9 +109,8 @@ print(consonants)
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
-#path='/home/b/datamad0320'
-path='../../../' #equivale a datamad0320/module-1/lab-errhand_listcomp/you-code, 
-                 #desde el punto de vista de la carpeta donde está el main.py
+path='../../../' # equivalent to datamad0320/module-1/lab-errhand_listcomp/you-code, 
+                 # written from the main.py folder
 files=[f for f in listdir(path) if isdir(join(path, f))]
 print(files)
 
@@ -147,8 +145,8 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 ['30', '20', '30', '50', '10', '30', '20', '20', '20'], ['100', '100'], ['100', '100', '100', '100', '100'], \
 ['100', '100', '100', '100']]
 
-floats=[[float(e) for e in ls ]for ls in list_of_lists] #Without flattening
-#floats=[float(e) for e in ls for ls in list_of_lists] #Flattening the list
+floats=[[float(e) for e in ls ]for ls in list_of_lists] # Without flattening
+#floats=[float(e) for e in ls for ls in list_of_lists]  # Flattening the list
 print(floats)
 
 
@@ -156,12 +154,11 @@ print(floats)
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
-# esta intentando sacar el cuadrado de un string
-for i in ['a','b','c']:
+for i in ['a','b','c']: # The loop is trying to calculate the square of a string
     try:
         print (i**2)
-    except Exception as error:
-        print('Please, introduce a number') 
+    except TypeError as error:
+        print(f'Please, introduce a number for the {i} position')
     
 
 
@@ -200,24 +197,18 @@ except IndexError as error:
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
 
-# REPASAR ESTA!!!
-def division (numbers):
-    num=[]
-    for i in numbers:
-        try:
-            num += [int(i)]
-        except: # If error, nothing happens and it skips to the following element
-            pass
-            
-    if len(num)!= 2: 
-        raise IndexError('Please, insert two numbers')
-    if num[1]==0:
-        raise ZeroDivisionError('Please, enter a non-zero divider')
-    if len(num)==2 and num[1]!=0:
-        print('result:', num[0]/num[1])   
+def division (number1, number2):
 
-numbers=input('Please, provide a couple of numbers ')
-division(numbers)
+    try:
+        print('result:', int(number1)/int(number2))
+    except IndexError:
+        print('Please, insert two numbers')
+    except ZeroDivisionError:
+        print('Please, enter a non-zero divider')   
+
+number1=input('Please, provide the first number (Dividend)')
+number2=input('Please, provide the second number (divisor)')
+division(number1, number2)
 
 
 
@@ -239,11 +230,10 @@ except FileNotFoundError as error:
 
 try:
     fp = open('myfile.txt')
-except FileNotFoundError: 
-    print ('File does not exist')
-line = fp.readline()
-try:
+    line = fp.readline()
     i = int(line.strip())
+except FileNotFoundError: 
+    print ('File does not exist')   
 except ValueError:
     print('Data cannot be converted into integer')
 
@@ -275,14 +265,16 @@ except OSError:
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 
-
 while True:
     try:
         number=input('Please, enter a number:')
-        print((int(number))**2)
-        break
+        num=int(number)
     except ValueError:
         print('Data is not correct. Please, try again')
+    else: # this block is executed if the try block doesn't rise an exception
+        print(num**2)
+        break
+
 
 
 
@@ -291,7 +283,7 @@ while True:
 # Use results as the name of the list 
 
 results=[x  for x in range(1, 1001) for i in range(2,10) if x%i==0]
-results=set(results)
+results=list(set(results))
 print(results)
 
 
@@ -300,14 +292,14 @@ print(results)
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
-class MyError (Exception): # MyError is subclass of Exception error
+class MyError (Exception): # MyError is a subclass of Exception error
     # The class needs the method __init__ to initiate the error
-    def __init__(self, message): #When we call the error, we can add a message 
+    def __init__(self, message): # When we call the error, we can add a message 
         self.message = message
 
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: "))
 if Num_of_Sections <2:
     raise MyError('Number of sections should be equal or greater than 2')
-"""
+
 
