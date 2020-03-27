@@ -1,12 +1,20 @@
 #
-p# Soldier
+# Soldier
+
+    
 class Soldier:
     def __init__(self, health, strength):
-        # add code here
-
-class Soldier:
-    pass
-
+        self.health= health
+        self.strength = strength
+    def Atack(self):
+        return self.strength
+    def ReceiveDamage(self,damage):
+         
+        self.damage = damage
+        newhealth = health - damage
+        pass
+soldier = Soldier(30,50)
+print(soldier)
 # Viking
 
 
