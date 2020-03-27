@@ -1,25 +1,26 @@
 
 # Soldier
-
-a=1
-
 class Soldier:
-    pass
+    def __init__(self, health, strength):
+        self.health=health
+        self.strength=strength
+    def attack(self):
+        return self.strength
+    def receiveDamage(self, damage):
+        self.health-=damage
 
+"""
 # Viking
-
-
 class Viking:
-    pass
+    def __init__(self):
 
 # Saxon
-
-
 class Saxon:
-    pass
+    def __init__(self):
 
 # War
-
-
 class War:
-    pass
+    def __init__(self):
+"""
+
+#python3 vikingsClasses.py -v -k testSoldier
