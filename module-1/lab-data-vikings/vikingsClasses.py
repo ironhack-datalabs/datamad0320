@@ -48,11 +48,15 @@ class Viking (Soldier):
 
 
 class Saxon(Soldier):
-    def __init__(self,health, strength)
-        super().__init(self, attack)
-    def attack(self,attackSaxo):
-        self.attackSaxo= attackSaxo 
-        return attackSaxo
+    def __init__(self,health, strength):
+        self.health= health
+        self.strength = strength  
+        
+   
+    def attack(self):
+        return self.strength 
+         
+    
     def receiveDamage(self,damageSaxo):
         self.damageSaxo = damageSaxo
         if self.health > self.damageSaxo:
