@@ -1,4 +1,3 @@
-
 #Example: 
 
 eggs = (1,3,8,3,2)
@@ -7,6 +6,7 @@ my_listComprehension = [1/egg for egg in eggs]
 
 print(my_listComprehension)
 
+
 #Insert here the module/library import statements 
 
 import math
@@ -14,11 +14,13 @@ import os
 import random
 import sys 
 
+
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 
 square = [i**2 for i in range(20)]
 print(square)
+
 
 #2. Calculate the first 50 power of two. Use power_of_two as the name of the list.
 # Remember to use list comprehensions and to print your results
@@ -61,10 +63,8 @@ print(divisible_by_seven)
 # You can use the following test string but feel free to modify at your convenience
 
 teststring = 'Find all of the words in a string that are monosyllabic'
-
 non_vowels = [e for e in teststring if set(["a","e","i","o","u"]).isdisjoint(e)]
-print("".join(non_vowels))
-
+print(non_vowels,"\n"+"".join(non_vowels))
 
 
 #8. Find the capital letters (and not white space) in the sentence 'The Quick Brown Fox Jumped Over The Lazy Dog'. 
@@ -122,14 +122,12 @@ print(floats)
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
-
 for i in ['a','b','c']:
     try:
         print (i**2)
     except TypeError:
         print("Los argumentos deben ser números")
         break
-
 
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
@@ -149,7 +147,6 @@ finally:
 #16. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
-
 try:
     abc=[10,20,20]
     print(abc[3])
@@ -157,26 +154,21 @@ except IndexError as e:
     print("El índice introducido es mayor que el índice del último elemento de la lista")
 
         
-
-
-
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
 
 while True:
     try:
-        dividendo = input("Por favor, introduzca dividendo: ")
-        divisor = input("Por favor, introduzca divisor: ")
-        division = float(dividendo) / float(divisor)
+        dividendo = float(input("Por favor, introduzca dividendo: "))
+        divisor = float(input("Por favor, introduzca divisor: "))
+        division = dividendo / divisor
         print(f"El resultado es {division}")
         break
     except ZeroDivisionError:
         print("El divisor no debe ser igual a cero")
     except ValueError:
-        print("Solo puedes introducir números enteros o decimales separados con punto")
-
-
+        print("Solo puedes introducir cada vez un número entero o decimal separado con punto")
 
 
 #18. Handle the exception thrown by the code below by using try and except blocks. 
@@ -199,9 +191,7 @@ try:
 except FileNotFoundError:
     print("El archivo no existe")
 except ValueError:
-    print ("No se puede convertir a número")
-
-
+    print ("En el texto sólo debe haber números enteros")
 
 
 #20. The following function can only run on a Linux system. 
@@ -230,10 +220,9 @@ except Exception:
 def calculo_cuadradro():
     while True:
         try:
-            entero = input("Por favor, introduzca un número entero: ")
-            entero = int(entero)
+            entero = int(input("Por favor, introduzca un número entero: "))
         except ValueError:
-            print("Solo puedes introducir números enteros")
+            print("Solo puedes introducir un número entero")
         else:
             cuadrado = entero**2
             print(f"El resultado es {cuadrado}")
@@ -267,4 +256,4 @@ while True:
     except menor2:
         print("El número de secciones no puede ser menor de 2")
     except ValueError:
-        print("Debe introducir números enteros")
+        print("Debe introducir un número entero")
