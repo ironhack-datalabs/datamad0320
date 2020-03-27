@@ -90,7 +90,7 @@ class War:
         self.saxon.receiveDamage(self.viking.attack)
         if self.saxon["health"] <= 0:
             self.saxonArmy.remove(self.saxon)
-        return 
+        return f"Saxon {recibedamage.viking.attack()}"
 
     def saxonAttack(self):
         self.saxon = random.choice(self.saxonArmy)
@@ -98,8 +98,13 @@ class War:
         self.viking.receiveDamage(self.saxon.attack)
         if self.viking['health'] <= 0:
             self.vikingArmy.remove(self.viking)
-        return
+        return f"{viking['name']} {recibedamage.saxon.attack()}"
 
     def showStatus(self):
+        if self.saxonArmy() ==  0:
+            return f"Vikings have won the war of the century!"
         
-
+        elif self.vikingArmy() == 0 :
+            return f"Saxons have fought for their lives and survive another day..."
+        else:
+            return f"Vikings and Saxons are still in the thick of battle."
