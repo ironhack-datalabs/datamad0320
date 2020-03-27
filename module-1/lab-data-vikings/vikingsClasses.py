@@ -42,12 +42,12 @@ class Saxon(Soldier):
         super().__init__(health, strength)
     
     def attack(self):
-        super().attack(self)
+        return self.strength
 
     def receiveDamage(self, damage):
         self.health -= damage
         if self.health == 0:
-            return (f"A Saxon has died in act of combat")
+            return (f"A Saxon has died in combat")
         else:
             return (f"A Saxon has received {damage} points of damage")
 
