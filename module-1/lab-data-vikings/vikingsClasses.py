@@ -28,8 +28,11 @@ class Viking:
     
     def receiveDamage(slef, damage):
         self.health = health - damage
-        if health <= 0:
-            return ("NAME has received DAMAGE points of damage")
+        if health = 0:
+            return (f"{name} has died in act of combat")
+        else:
+            return (f"{name} has received {damage} points of damage")
+
 
 
 # Saxon
