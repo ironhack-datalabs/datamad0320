@@ -1,3 +1,6 @@
+import random
+
+
 
 # Soldier
 
@@ -14,7 +17,7 @@ class Soldier:
     
     # Method "receiveDamage()" with one argument: "damage"
     def receiveDamage(self, damage):
-        self.health+= (-damage)
+        self.health += (-damage)
 
 
 
@@ -31,7 +34,7 @@ class Viking (Soldier):
         self.name=viking_name           # 1st Viking property: name
         self.health=viking_health       # 2nd Viking property: health
         self.strength=viking_strength   # 3rd Viking property: strength
-        
+
     # Method "attack()" inherit from Soldier
 
     # Method "receiveDamage()" is different from the one inherit from Soldier
@@ -45,7 +48,7 @@ class Viking (Soldier):
 
     # Method "battleCry()"
     def battleCry(self):
-        return f"Odin Owns You All!"
+        return "Odin Owns You All!"
 
 
 
@@ -55,6 +58,7 @@ class Viking (Soldier):
 # class Saxon is a subclass of Soldier.
 class Saxon (Soldier):
     def __init__(self, saxon_health, saxon_strength):
+        # PONER SUPER __INIT__
         self.health=saxon_health       # 1st Saxon property: health
         self.strength=saxon_strength   # 2nd Saxon property: strength
 
@@ -75,4 +79,47 @@ class Saxon (Soldier):
 
 
 class War:
-    pass
+
+    # Meter que coja un elemento random
+    def __init__(self):
+        self.vikingArmy = []   # property
+        self.saxonArmy = []    # property
+
+    def addViking(self, Viking):
+        self.vikingArmy += [Viking]
+        
+    def addSaxon(self, Saxon):
+        self.saxonArmy += [Saxon]
+
+    def vikingAttack(self):
+        
+        saxon1=random.choice(self.saxonArmy) # random name of the saxon
+        viking1=random.choice(self.vikingArmy) # random name of the viking
+
+        atack1 = saxon1.receiveDamage(viking1.attack()) # viking1.attack() == viking1.strength
+     
+        if saxon1.health <= 0:
+            self.saxonArmy.remove(saxon1)
+
+        return atack1 #saxon1.receiveDamage(viking1.strength)
+
+    def saxonAttack(self):
+
+        saxon2=random.choice(self.saxonArmy) # random name of the saxon
+        viking2=random.choice(self.vikingArmy) # random name of the viking
+
+        resultado_ataque2=viking2.receiveDamage(saxon2.strength) # saxon2.strength == saxon2.attack()
+        
+        if viking2.health <= 0:
+            self.vikingArmy.remove(viking2)
+
+        return resultado_ataque2 #viking2.receiveDamage(saxon2.strength)
+
+    def showStatus(self):
+        if self.saxonArmy == []:
+            return "Vikings have won the war of the century!"
+        if self.vikingArmy == []:
+            return "Saxons have fought for their lives and survive another day..."
+        else:
+            return "Vikings and Saxons are still in the thick of battle."
+    
