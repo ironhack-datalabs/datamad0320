@@ -194,12 +194,17 @@ print(results)
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
-try:
-    Total_Marks = int(float(input("Enter Total Marks Scored: ")))
-    Num_of_Sections = int(float(input("Enter Num of Sections: ")))
-except MyError:
-    print("The number of sections is less than 2.")
 
 class MyError(ValueError):
-    self
+        pass
+
+while True:
+    try:
+        Total_Marks = int(float(input("Enter Total Marks Scored: ")))
+        Num_of_Sections = int(float(input("Enter Num of Sections: ")))
+        if Total_Marks<2:
+            raise MyError
+        break
+    except MyError:
+        print("The number of sections is less than 2.")
 
