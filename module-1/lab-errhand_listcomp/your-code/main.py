@@ -52,26 +52,30 @@ print(my_list)
 odds =[x for x in range(1,101,+2)]
 print(odds)
 
-
+"""
 """
 #6. Find all of the numbers from 1-1000 that are divisible by 7. Use divisible_by_seven as the name of the list.
 # Remember to use list comprehensions and to print your results
 
-
-divisible_by_seven = [int(x) for x/7 in range (1000)] 
-print(divisible_by_seven)
-
+# CLARA/FELIPE: BUSCO UN NUMERO QUE DIVIDIDO POR 7 SEA INT
+# divisible_by_seven = [int(x) for x/7 in range (1000)] 
+# print(divisible_by_seven)
 
 """
+
 #7. Remove all of the vowels in a string. Hint: make a list of the non-vowels. Use non_vowels as the name of the list.
 # Remember to use list comprehensions and to print your results
 # You can use the following test string but feel free to modify at your convenience
 
 teststring = 'Find all of the words in a string that are monosyllabic'
 
+teststring = ['t','e','s','t','s','t','r','i','n','g']
+vowels = ('a','e','i','o','u')
+non_vowels = [vowels for vowels in teststring]
+teststring.remove('t')
+print(non_vowels)
 
-
-
+"""
 #8. Find the capital letters (and not white space) in the sentence 'The Quick Brown Fox Jumped Over The Lazy Dog'. 
 # Use capital_letters as the name of the list.  
 # Remember to use list comprehensions and to print your results
@@ -202,5 +206,4 @@ def linux_interaction():
 
 Total_Marks = int(input("Enter Total Marks Scored: ")) 
 Num_of_Sections = int(input("Enter Num of Sections: "))
-
 """
