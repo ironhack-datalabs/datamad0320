@@ -239,7 +239,6 @@ def linux_interaction():
         print('Doing something.')
     except Exception as e:
         
-"""
 
 
 # Bonus Questions:
@@ -251,35 +250,61 @@ def linux_interaction():
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 
 
-def asking():
+def asking(beep):
+    
+    if type(beep) != int:
+        raise ValueError("You should type it as an int")
 
-    beep=[]
-    while beep != int:
+    x=beep**2
+    return f"Number  {beep}"
+
+
+    while True:
         try:
             beep=input("Write  an integer number: ")
-
-            x=beep**2
-        except Exception as e:
+            break
+            
+        except: 
+            print("Introduce solo un numero int")
     
         
-            break
-    return x
-
-asking()
+            
+    
 
 
-"""
+
+
+
+
+
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
 
+results=[e for e in range(1,1001)if e != e%2==0 and  e%9==1]
 
 
 
+"""
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
-Total_Marks = int(input("Enter Total Marks Scored: ")) 
-Num_of_Sections = int(input("Enter Num of Sections: "))
-"""
+
+Num_of_Sections=0
+
+while Num_of_Sections <2:
+    try: 
+        Total_Marks = int(input("Enter Total Marks Scored: ")) 
+
+
+        Num_of_Sections = int(input("Enter Num of Sections: "))
+
+
+    except Exception as e:
+        Print("Accepted calues, Num_of_Setions less than 2")
+
+
+
+
+
 
