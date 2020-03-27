@@ -1,6 +1,6 @@
 
 # Soldier
-#testing
+
 
 class Soldier:
     pass
