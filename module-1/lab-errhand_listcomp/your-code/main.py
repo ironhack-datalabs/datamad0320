@@ -272,7 +272,7 @@ while True:
 
 results = [e for e in range(1,1000) for x in range(2,10) if e%x ==0]
 
-print(results)
+print(set(results))
 
 
 # 23. Define a customised exception to handle not accepted values. 
