@@ -82,18 +82,19 @@ class War:
         sajon = random.choice(self.saxonArmy)
         vikingo = random.choice(self.vikingArmy)
 
-        sajon.receiveDamage(vikingo.attack())
+        resultado = sajon.receiveDamage(vikingo.attack())
         if sajon.health <= 0:
             self.saxonArmy.remove(sajon)
-        return sajon.receiveDamage(vikingo.attack())
+        return resultado
 
     def saxonAttack(self):
+        # Sacar de forma aleatoria un sajón y un vikingo
         sajon = random.choice(self.saxonArmy)
         vikingo = random.choice(self.vikingArmy)
-        vikingo.receiveDamage(sajon.attack())
+        resultado = vikingo.receiveDamage(sajon.attack())
         if vikingo.health <= 0:
             self.vikingArmy.remove(vikingo)
-        return vikingo.receiveDamage(sajon.attack())
+        return resultado
     
     def showStatus(self):
         if len(self.saxonArmy) == 0:
