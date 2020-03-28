@@ -35,9 +35,19 @@ class Viking(Soldier):
 
 # Saxon
 
+class Saxon(Soldier):
+    def __init__(self, health, strength):
+        Soldier.__init__(self, health, strength)
+    
+    def receiveDamage(self, damage):
+        Soldier.receiveDamage(self, damage)
+        if self.health>0:
+            return(f"A Saxon has received {damage} points of damage")
+        else:
+            return(f"A Saxon has died in combat")
 
-class Saxon:
-    pass
+
+
 
 # War
 
