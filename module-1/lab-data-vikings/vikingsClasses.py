@@ -68,18 +68,18 @@ class War:
     def vikingAttack(self):
         ransaxon = random.choice(self.saxonArmy)
         ranviking = random.choice(self.vikingArmy)
-        if ransaxon.receiveDamage(ranviking.attack()) != "A Saxon has died in combat":
+        if ransaxon.receiveDamage(ranviking.attack()) == "A Saxon has died in combat":
             ransaxon.health = ransaxon.receiveDamage(ranviking.attack())
         else:
             self.saxonArmy.remove(ransaxon)
     
     def saxonAttack(self):
-        ransaxon = random.choice(self.saxonArmy)
-        ranviking = random.choice(self.vikingArmy)
-        if ranviking.receiveDamage(ransaxon.attack()) >= 0:
-            ranviking.health = ranviking.receiveDamage(ransaxon.attack())
+        rsaxon = random.choice(self.saxonArmy)
+        rviking = random.choice(self.vikingArmy)
+        if rviking.receiveDamage(rsaxon.attack()) != "{rviking.name} has died in act of combat":
+            rviking.health = rviking.receiveDamage(rsaxon.attack())
         else:
-            self.vikingArmy.remove(ranviking)
+            self.vikingArmy.remove(rviking)
 
     def showStatus(self):
         if len(self.saxonArmy) == 0:
