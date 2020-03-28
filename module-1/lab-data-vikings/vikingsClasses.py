@@ -67,7 +67,7 @@ class War:
     def vikingAttack(self):
         saxon = random.choice(self.saxonArmy)
         viking_damage = random.choice(self.vikingArmy)
-        result = saxon.receiveDamage(viking_damage.strength)
+        result = saxon.receiveDamage(viking_damage.attack())
         if saxon.health < 1:
             self.saxonArmy = [e for e in self.saxonArmy if e.health > 0]
         return result
@@ -75,7 +75,7 @@ class War:
     def saxonAttack(self):
         viking = random.choice(self.vikingArmy)
         saxon_damage = random.choice(self.saxonArmy)
-        result = viking.receiveDamage(saxon_damage.strength)
+        result = viking.receiveDamage(saxon_damage.attack())
         if viking.health < 1:
             self.vikingArmy = [e for e in self.vikingArmy if e.health > 0]
         return result
