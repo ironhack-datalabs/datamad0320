@@ -26,7 +26,7 @@ class Viking(Soldier):
     
     def receiveDamage(self, damage):
         self.health -= damage
-        if self.health == 0:
+        if self.health <= 0:
             return (f"{self.name} has died in act of combat")
         else:
             return (f"{self.name} has received {damage} points of damage")
@@ -46,7 +46,7 @@ class Saxon(Soldier):
 
     def receiveDamage(self, damage):
         self.health -= damage
-        if self.health == 0:
+        if self.health <= 0:
             return (f"A Saxon has died in combat")
         else:
             return (f"A Saxon has received {damage} points of damage")
@@ -68,18 +68,18 @@ class War:
     def vikingAttack(self):
         ransaxon = random.choice(self.saxonArmy)
         ranviking = random.choice(self.vikingArmy)
-        if ransaxon.receiveDamage(ranviking.attack()) != 0:
-            ransaxon.health = receiveDamage(ranviking.attack())
+        if ransaxon.receiveDamage(ranviking.attack()) != "A Saxon has died in combat":
+            ransaxon.health = ransaxon.receiveDamage(ranviking.attack())
         else:
-            saxonArmy.remove(ransaxon)
+            self.saxonArmy.remove(ransaxon)
     
     def saxonAttack(self):
         ransaxon = random.choice(self.saxonArmy)
         ranviking = random.choice(self.vikingArmy)
-        if ranviking.receiveDamage(ransaxon.attack()) != 0:
-            ranviking.health = receiveDamage(ransaxon.attack())
+        if ranviking.receiveDamage(ransaxon.attack()) >= 0:
+            ranviking.health = ranviking.receiveDamage(ransaxon.attack())
         else:
-            vikingArmy.remove(ranviking)
+            self.vikingArmy.remove(ranviking)
 
     def showStatus(self):
         if len(self.saxonArmy) == 0:
