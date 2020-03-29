@@ -24,16 +24,16 @@ class Soldier:
 
 # Viking
 
-#METER SUPER INIT EN LA __INIT__
+# METER SUPER INIT EN LA __INIT__
 
 # class Viking is a subclass of Soldier.
 class Viking (Soldier):
     # Construction function with three arguments: name, health, and strength
-    def __init__(self, viking_name, viking_health, viking_strength): #Por qué en este orden??
-        #super().__init__(self, viking_health, viking_strength)
+    def __init__(self, viking_name, viking_health, viking_strength):
         self.name=viking_name           # 1st Viking property: name
-        self.health=viking_health       # 2nd Viking property: health
-        self.strength=viking_strength   # 3rd Viking property: strength
+        super().__init__(viking_health, viking_strength)
+        #self.health=viking_health       # 2nd Viking property: health
+        #self.strength=viking_strength   # 3rd Viking property: strength
 
     # Method "attack()" inherit from Soldier
 
@@ -58,9 +58,9 @@ class Viking (Soldier):
 # class Saxon is a subclass of Soldier.
 class Saxon (Soldier):
     def __init__(self, saxon_health, saxon_strength):
-        # PONER SUPER __INIT__
-        self.health=saxon_health       # 1st Saxon property: health
-        self.strength=saxon_strength   # 2nd Saxon property: strength
+        super().__init__(saxon_health, saxon_strength)
+        #self.health=saxon_health       # 1st Saxon property: health
+        #self.strength=saxon_strength   # 2nd Saxon property: strength
 
     # Method "attack()" inherit from Soldier
 
@@ -75,21 +75,20 @@ class Saxon (Soldier):
 
 
 
-# War
 
+# War
 
 class War:
 
-    # Meter que coja un elemento random
     def __init__(self):
         self.vikingArmy = []   # property
         self.saxonArmy = []    # property
 
-    def addViking(self, Viking):
-        self.vikingArmy += [Viking]
+    def addViking(self, viking):
+        self.vikingArmy += [viking]
         
-    def addSaxon(self, Saxon):
-        self.saxonArmy += [Saxon]
+    def addSaxon(self, saxon):
+        self.saxonArmy += [saxon]
 
     def vikingAttack(self):
         
@@ -108,7 +107,7 @@ class War:
         saxon2=random.choice(self.saxonArmy) # random name of the saxon
         viking2=random.choice(self.vikingArmy) # random name of the viking
 
-        resultado_ataque2=viking2.receiveDamage(saxon2.strength) # saxon2.strength == saxon2.attack()
+        resultado_ataque2=viking2.receiveDamage(saxon2.attack()) # saxon2.attack() == saxon2.strength 
         
         if viking2.health <= 0:
             self.vikingArmy.remove(viking2)
