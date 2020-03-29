@@ -101,34 +101,37 @@ class War:
         
         
     def vikingAttack(self):
+        saxon_soldier = random.choice(self.saxonArmy)
         
-        ransaxon = random.choice(self.saxonArmy)
-        ranviking = random.choice(self.vikingArmy)
+        viking_soldier = random.choice(self.vikingArmy)
         
-        ransaxon.receivedDamage(ranviking.straigth)
-        for soldier in self.saxonArmy:
-            if soldier.health<=0:
-                self.saxonArmy.remove(soldier)
-                return "A Saxon has died in combat"
+        saxon_soldier.receiveDamage(viking_soldier.attack())
         
+        if saxon_soldier.health <= 0:
+            
+            self.saxonArmy.remove(saxon_soldier)
+            return "A Saxon has died in combat"
         
         
         
     def saxonAttack(self):
+        
+        saxon_soldier = random.choice(self.saxonArmy)
+        
+        viking_soldier = random.choice(self.vikingArmy)
+        
+        viking_soldier.receiveDamage(saxon_soldier.attack())
+        
+        if viking_soldier.health <= 0:
+            self.vikingArmy.remove(viking_soldier)
+            
+        return f"{viking_soldier.name} has received {saxon_soldier.strength} points of damage"
 
-        ransaxon = random.choice(self.saxonArmy)
-        ranviking = random.choice(self.vikingArmy)
-        ranviking.receiveDamage(ransaxon.streigth
-        for soldier in self.vikingArmy:
-            if soldier.health <=0:
-                self.vikingArmy.remove(soldrier)
-       
-        return f"{ranviking} has received {ransaxon} points of damage"
         
         
     def showStatus(self):
         
-        if (len(self.saxonArmy) > 0 and len(self.saxonArmy) == 0):
+        if (len(self.vikingArmy) > 0 and len(self.saxonArmy) == 0):
             return "Vikings have won the war of the century!"
         
         elif (len(self.vikingArmy) == 0 and len(self.saxonArmy) >0):
@@ -137,3 +140,4 @@ class War:
             return "Vikings and Saxons are still in the thick of battle."
     
     
+
