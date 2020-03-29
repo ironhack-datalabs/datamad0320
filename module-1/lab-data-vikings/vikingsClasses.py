@@ -4,7 +4,6 @@ import random
 
 # Soldier
 
-
 class Soldier:
     def __init__ (self,health, strength):
         self.health= health
@@ -35,7 +34,6 @@ class Viking(Soldier):
         return "Odin Owns You All!"
 
 
-
 # Saxon
 
 class Saxon(Soldier):
@@ -50,8 +48,6 @@ class Saxon(Soldier):
             return(f"A Saxon has died in combat")
 
 
-
-
 # War
 
 
@@ -60,38 +56,43 @@ class War:
         self.vikingArmy=[]
         self.saxonArmy=[]
     
-    def addViking (self, viking=1):
-        self.vikingArmy.append(viking)
+    def addViking (self, Viking):
+        self.vikingArmy.append(Viking)
 
-    def addSaxon (self, saxon):
-        self.saxonArmy.append(saxon)
+    def addSaxon (self, Saxon):
+        self.saxonArmy.append(Saxon)
 
     def vikingAttack(self):
-        viking= random.choice(self.vikingArmy)
+        random_viking = self.vikingArmy[random.randint(0, len(self.vikingArmy) - 1)]  # Viking + index
+        random_saxon = self.saxonArmy[random.randint(0, len(self.saxonArmy) - 1)]  # saxon + index
 
-        random_saxon=random.randint(0, len(self.saxonArmy)-1)
+        viking_attack = random_viking.attack()  # viking attack
+        saxon_damage = random_saxon.receiveDamage(viking_attack)  # viking attack=saxon damage
 
-        self.saxonArmy[random_saxon].receiveDamage(Viking.strength)
-        if self.saxonArmy[random_saxon].health < 1:
-            self.saxonArmy.pop(random_saxon)
-            return "A Saxon has died"
+        if random_saxon.health < 1:
+            self.saxonArmy.remove(random_saxon)
+            return "A Saxon has died in combat"
+        
+        return saxon_damage
+
 
     def saxonAttack(self):
-        Saxon= random.choice(self.saxonArmy)
+        random_viking = self.vikingArmy[random.randint(0, len(self.vikingArmy) - 1)]  # Viking + index
+        random_saxon = self.saxonArmy[random.randint(0, len(self.saxonArmy) - 1)]  # saxon + index
 
-        random_viking=random.randint(0, len(self.vikingArmy)-1)
+        saxon_attack = random_saxon.attack()  # saxon attack
+        viking_damage = random_viking.receiveDamage(saxon_attack)  # viking attack=saxon damage
 
-        self.vikingArmy[random_viking].receiveDamage(Saxon.strength)
-        if self.vikingArmy[random_viking].health < 1:
-            self.vikingArmy.pop(random_viking)
+        if random_viking.health < 1:
+            self.vikingArmy.remove(random_viking)
             return "A Viking has died"
-
-
+            
+        return viking_damage
 
     def showStatus(self):
         if len(self.saxonArmy)== 0:
             return "Vikings have won the war of the century!"
         if len (self.vikingArmy)== 0:
             return "Saxons have fought for their lives and survive another day..."
-        if len(self.saxonArmy) >1 and len(self.vikingArmy)>1 :
+        if (len(self.saxonArmy) >0) and (len(self.vikingArmy)>0) :
             return "Vikings and Saxons are still in the thick of battle."
