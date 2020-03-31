@@ -18,28 +18,29 @@ USE `car_DataBase`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `table_cars`
+-- Table structure for table `Invoices`
 --
 
-DROP TABLE IF EXISTS `table_cars`;
+DROP TABLE IF EXISTS `Invoices`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `table_cars` (
-  `Cars` int NOT NULL,
-  `Customers` int NOT NULL,
-  `Salespersons` varchar(45) NOT NULL,
-  `Invoices` varchar(45) NOT NULL,
-  PRIMARY KEY (`Cars`)
+CREATE TABLE `Invoices` (
+  `Invoice number` int NOT NULL,
+  `Dates` datetime NOT NULL,
+  `Car` varchar(45) NOT NULL,
+  `Customer` varchar(45) NOT NULL,
+  `Salesperson` varchar(45) NOT NULL,
+  PRIMARY KEY (`Invoice number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `table_cars`
+-- Dumping data for table `Invoices`
 --
 
-LOCK TABLES `table_cars` WRITE;
-/*!40000 ALTER TABLE `table_cars` DISABLE KEYS */;
-/*!40000 ALTER TABLE `table_cars` ENABLE KEYS */;
+LOCK TABLES `Invoices` WRITE;
+/*!40000 ALTER TABLE `Invoices` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Invoices` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-03-31 20:03:27
+-- Dump completed on 2020-03-31 20:34:49
