@@ -1,0 +1,40 @@
+USE lab_mysql;
+
+
+CREATE TABLE `lab_mysql`.`Cars` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `VIN` VARCHAR(45) NOT NULL,
+  `Manufacturer` VARCHAR(45) NOT NULL,
+  `Model` VARCHAR(45) NOT NULL,
+  `Year` VARCHAR(45) NOT NULL,
+  `Color` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`ID`));
+
+CREATE TABLE `lab_mysql`.`Customers` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `Customers ID` VARCHAR(45) NOT NULL,
+  `Name` VARCHAR(45) NOT NULL,
+  `Phone` VARCHAR(45) NOT NULL,
+  `Email` VARCHAR(45) NOT NULL,
+  `Address` VARCHAR(45) NOT NULL,
+  `City` VARCHAR(45) NOT NULL,
+  `State/Province` VARCHAR(45) NOT NULL,
+  `Country` VARCHAR(45) NOT NULL,
+  `Postal` INT NOT NULL,
+  PRIMARY KEY (`ID`));
+
+CREATE TABLE `lab_mysql`.`Salespersons` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `Staff ID` VARCHAR(45) NOT NULL,
+  `Name` VARCHAR(45) NOT NULL,
+  `Store` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`ID`));
+
+CREATE TABLE `lab_mysql`.`Invoices` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `Invoices Number` VARCHAR(45) NOT NULL,
+  `Date` DATE NOT NULL,
+  `Car` VARCHAR(45) NOT NULL,
+  `Customer` VARCHAR(45) NOT NULL,
+  `Sales Person` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`ID`));
