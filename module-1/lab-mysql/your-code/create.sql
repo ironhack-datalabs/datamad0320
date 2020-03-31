@@ -1,4 +1,3 @@
-
 USE lab_mysql;
 
 CREATE TABLE lab_mysql.Cars (

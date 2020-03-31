@@ -1,0 +1,1 @@
+ALTER TABLE lab_mysql.Cars ADD UNIQUE INDEX(VIN);
