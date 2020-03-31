@@ -1,0 +1,1 @@
+DELETE from Cars WHERE id IN (4);
