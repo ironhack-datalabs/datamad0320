@@ -1,0 +1,1 @@
+DELETE FROM `lab-mysql`.`cars` WHERE VIN='DAM41UDN3CHU2WVF7';
