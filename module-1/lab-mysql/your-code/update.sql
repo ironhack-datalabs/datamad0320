@@ -1,5 +1,6 @@
 USE lab_mysql;
-UPDATE Salespersons SET store = "Miami" WHERE staffID = 00005;
+SET SQL_SAFE_UPDATES = 0;
+UPDATE Salespersons SET store = "Miami" WHERE name = "Paige Turner";
 ALTER TABLE Salespersons ADD email varchar(60);
 INSERT INTO Salespersons(staffID,name,store,email)
 	VALUES (00009,"Pablo Picasso","-","ppicasso@gmail.com"),
