@@ -1,1 +1,3 @@
-ALTER TABLE lab_mysql.Cars ADD UNIQUE INDEX(VIN);
+USE lab_mysql;
+SET SQL_SAFE_UPDATES = 0;
+

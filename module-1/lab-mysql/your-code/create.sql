@@ -6,8 +6,7 @@ CREATE TABLE lab_mysql.Cars (
   `model` VARCHAR(45) NOT NULL,
   `year` INT NOT NULL,
   `color` VARCHAR(45) NOT NULL
-  );
-
+);
 CREATE TABLE lab_mysql.Customers (
   `idCustomers` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
