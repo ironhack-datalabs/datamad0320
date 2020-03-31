@@ -1,5 +1,6 @@
 
 # Table cars
+
 INSERT INTO `lab-mysql`.`cars` (`VIN`, `manufacturer`, `model`, `year`, `color`) VALUES ('3K096I98581DHSNUP', 'Volkswagen', 'Tiguan', '2019', 'Blue');
 INSERT INTO `lab-mysql`.`cars` (`VIN`, `manufacturer`, `model`, `year`, `color`) VALUES ('ZM8G7BEUQZ97IH46V', 'Peugeot', 'Rifter', '2019', 'Red');
 INSERT INTO `lab-mysql`.`cars` (`VIN`, `manufacturer`, `model`, `year`, `color`) VALUES ('RKXVNNIHLVVZOUB4M', 'Ford', 'Fusion', '2018', 'White');

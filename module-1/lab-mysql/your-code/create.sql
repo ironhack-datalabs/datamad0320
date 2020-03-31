@@ -3,14 +3,14 @@ CREATE SCHEMA `lab-mysql` ;
 
 CREATE TABLE `lab-mysql`.`cars` (
   `VIN` CHAR(17) NOT NULL,
-  `manufacturer` TINYTEXT NULL,
-  `model` VARCHAR(45) NULL,
-  `year` INT NULL, 
-  `color` TINYTEXT NULL,
+  `manufacturer` TINYTEXT NOT NULL,
+  `model` VARCHAR(45) NOT NULL,
+  `year` INT NOT NULL, 
+  `color` TINYTEXT NOT NULL,
   PRIMARY KEY (`VIN`));
-  
+ 
 CREATE TABLE `lab-mysql`.`customers` (
-  `idcustomers` INT(5) NOT NULL,
+  `idcustomers` INT(5) NOT NULL AUTO_INCREMENT,
   `customername` TINYTEXT NOT NULL,
   `phone` VARCHAR(20) NOT NULL,
   `email` VARCHAR(45) NULL,
@@ -18,19 +18,19 @@ CREATE TABLE `lab-mysql`.`customers` (
   `city` TINYTEXT NOT NULL,
   `state/province` TINYTEXT NOT NULL,
   `country` TINYTEXT NOT NULL,
-  `ZIP` VARCHAR(5) NULL,
+  `zip` VARCHAR(5) NOT NULL,
   PRIMARY KEY (`idcustomers`));
     
 CREATE TABLE `lab-mysql`.`invoices` (
   `invoicenumber` INT(9) NOT NULL,
   `date` DATE NOT NULL,
-  `car` INT(11) NOT NULL,
+  `car` INT NOT NULL,
   `customers` INT NOT NULL,
   `salesman` INT NOT NULL,
   PRIMARY KEY (`invoicenumber`));
-  
+   
 CREATE TABLE `lab-mysql`.`salespersons` (
-  `idstaff` CHAR(5) NOT NULL,
+  `idstaff` INT(11) NOT NULL AUTO_INCREMENT,
   `staffname` TINYTEXT NOT NULL,
   `store` TINYTEXT NOT NULL,
   PRIMARY KEY (`idstaff`));
