@@ -40,10 +40,13 @@ CREATE TABLE lab_mysql.Invoices(
     SalesPerson_idSalesPerson INT NOT NULL,
     Customer_idCustomer INT NOT NULL,
     PRIMARY KEY (idInvoice),
-    FOREIGN KEY (Car_idCar) REFERENCES Car(idCar)
-    ON DELETE CASCADE,
-    FOREIGN KEY (SalesPerson_idSalesPerson) REFERENCES SalesPerson(idSalesPerson)
-    ON DELETE NO ACTION,
-    FOREIGN KEY (Customer_idCustomer) REFERENCES Customer(idCustomer)
-    ON DELETE NO ACTION
+    CONSTRAINT FKCar
+		FOREIGN KEY (Car_idCar) REFERENCES Car(idCar)
+		ON DELETE CASCADE,
+    CONSTRAINT FKSalesPerson
+		FOREIGN KEY (SalesPerson_idSalesPerson) REFERENCES SalesPerson(idSalesPerson)
+		ON DELETE NO ACTION,
+    CONSTRAINT FKCustomer
+		FOREIGN KEY (Customer_idCustomer) REFERENCES Customer(idCustomer)
+		ON DELETE NO ACTION
     );
