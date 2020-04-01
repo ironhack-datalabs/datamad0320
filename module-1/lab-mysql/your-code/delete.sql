@@ -1,3 +1,3 @@
 #Delete ID4
 
-DELETE FROM `lab-mysql`.`cars` WHERE VIN='DAM41UDN3CHU2WVF7'; 
+DELETE FROM `lab-mysql`.`Cars` WHERE VIN='DAM41UDN3CHU2WVF7'; 
