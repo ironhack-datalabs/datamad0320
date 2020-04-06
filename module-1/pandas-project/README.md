@@ -38,6 +38,9 @@ The following deliverables should be pushed to your Github repo for this chapter
 * **Commit early, commit often**, don’t be afraid of doing something incorrectly because you can always roll back to a previous version.
 * **Consult documentation and resources provided** to better understand the tools you are using and how to accomplish what you want.
 
+
+* [Pandas Project] Albert Jose Lobera :https://github.com/AlbertJlobera/-data-cleaning-pandas-.git
+
 ## Useful Resources
 
 * [Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/)
