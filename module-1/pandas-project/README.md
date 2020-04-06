@@ -39,7 +39,7 @@ The following deliverables should be pushed to your Github repo for this chapter
 * **Consult documentation and resources provided** to better understand the tools you are using and how to accomplish what you want.
 
 
-* [Pandas Project] Albert Jose Lobera :https://github.com/AlbertJlobera/-data-cleaning-pandas-.git
+
 
 ## Useful Resources
 
