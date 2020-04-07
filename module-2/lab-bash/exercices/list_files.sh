@@ -87,10 +87,12 @@ rm -r ../$name
 
 #Por cada archivo dentro de la carpeta lorem imprime el número de carácteres que tienen sus nombres. Intenta primero mostrar los archivos mediante un bucle for
     #Imprime los ficheros
+for file in $(ls ../lorem); do echo $file; done
     #Imprime las longitudes de los nombres de los ficheros
+for file in $(ls ../lorem); do echo ${#file%.txt}; done
     #Imprime outputs con la siguiente estructura: lorem has 5 characters lenght
-    for file in ../lorem/*; do echo -n "$file" | wc -m ; echo "$file"; done
-    #Este no es correcto, consigo llegar al número de palabras por path y no en el formato que piden
+for file in $(ls ../lorem); do echo $file has ${#file%.txt} words; done
+#Esto me funciona en la terminal, pero al correr el script me da error, no se por qué.
 
 
 #Muestra los procesos de forma jerárquica que se están ejecutando en tu ordenador:
