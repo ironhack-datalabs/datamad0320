@@ -50,16 +50,13 @@ print(c)
 
 d=np.add(a,c)
 
-print(d)
+print(d) # Ahora si funciona el add por que el shape de a y c es el mismo
 
-# Ahora si funciona el add por que el shape de a y c es el mismo
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
 
 print(a)
-print(d)
-
-# Al ser d la suma de las arrays a y c, los valores del array d son iguales a + 1(ya que los valores de c son todos unos)
+print(d) # Al ser d la suma de las arrays a y c, los valores del array d son iguales a + 1(ya que los valores de c son todos unos)
 
 #12. Multiply a and c. Assign the result to e.
 
