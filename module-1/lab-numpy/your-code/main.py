@@ -48,7 +48,7 @@ d = a + c
 
 print("a =",a)
 print("d =",d)
-#d is sum element by element a
+#d is sum element by element a+c
 
 
 #12. Multiply a and c. Assign the result to e.
@@ -83,12 +83,11 @@ Assign 0 to the corresponding value(s) in f for d_min in d.
 Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
-"""
+""
 
 
 
-
-"""
+""
 #17. Print d and f. Do you have your expected f?
 For instance, if your d is:
 array([[[1.85836099, 1.67064465, 1.62576044, 1.40243961, 1.88454931],
