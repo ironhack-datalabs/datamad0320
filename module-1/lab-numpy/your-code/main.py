@@ -74,23 +74,23 @@ In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
 lis=[]
-def popu(a):
+def popu(a,f):
         for b in a:
                 for c in b:
                         for d in c:
                                 if d>np.amin(a) and d<np.mean(a):
-                                        lis.append(25)
+                                        f[b][c] =25
                                 elif d>np.mean(a) and d<np.amax(a):
-                                        lis.append(75)
+                                        f[b][c] =75
                                 elif d==np.mean(a):
-                                        lis.append(50)
+                                        f[b][c] = 50
                                 elif d ==np.amin(a):
-                                        lis.append(0)
+                                        f[b][c] =0
                                 elif d==np.amax(a):
-                                        lis.append(100)
-        return lis
+                                        f[b][c] =100
+        return f
 
-print(popu(d))
+print(popu(d,f))
 
 
 
