@@ -1,67 +1,73 @@
 #1. Import the NUMPY package under the name np.
-
+import numpy as np
 
 
 #2. Print the NUMPY version and the configuration.
-
+print(np.version.version)
 
 
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
-
+a = np.random.random((2,3,5))
 
 
 #4. Print a.
-
+print(a)
 
 
 #5. Create a 5x2x3 3-dimensional array with all values equaling 1.
 #Assign the array to variable "b"
-
+b = np.ones((5,3,2)) 
+#I think there is a mistake in the text, the matrix should be 5x3x2 so when it's transposed it can be summed to a
 
 
 #6. Print b.
-
+print(b)
 
 
 #7. Do a and b have the same size? How do you prove that in Python code?
-
+print(a.size == b.size)
 
 
 
 #8. Are you able to add a and b? Why or why not?
-
+print('No, they have different dimensions')
 
 
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
-
+c = b.T
 
 
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
-
+d = c + a
 
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
-
+print(a)
+print(d)
+print('The resulting matrix has the same dimensions as the parent matrices\n and each value is the sum of the corresponding places in the parents')
 
 
 
 #12. Multiply a and c. Assign the result to e.
-
+e = a * c
 
 
 #13. Does e equal to a? Why or why not?
-
+print(a.shape == e.shape)
+print('Yes, because both parents have the same dimensions')
 
 
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
-
+d_max = d.max()
+d_min = d.min()
+d_mean = d.mean()
 
 
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
-
+f = np.empty((2,3,5))
 
 
 
@@ -74,7 +80,19 @@ Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
-
+for i in range(2):
+    for x in range(3):
+        for z in range(5):
+            if d[i][x][z] == d_min: 
+                f[i][x][z] = 0
+            elif d[i][x][z] == d_max: 
+                f[i][x][z] = 100
+            elif d[i][x][z] > d_mean:
+                f[i][x][z] = 75
+            elif d[i][x][z] == d_mean: 
+                f[i][x][z] = 50
+            elif d[i][x][z] < d_mean: 
+                f[i][x][z] = 25
 
 
 
@@ -98,7 +116,8 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
         [ 75.,  75.,  75.,  75.,  75.],
         [ 25.,  75.,   0.,  75.,  75.]]])
 """
-
+print(d)
+print(f)
 
 """
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
@@ -112,3 +131,18 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+f = f.astype(str)
+for i in range(2):
+    for x in range(3):
+        for z in range(5):
+            if d[i][x][z] == d_min: 
+                f[i][x][z] = 'A'
+            elif d[i][x][z] == d_max: 
+                f[i][x][z] = 'E'
+            elif d[i][x][z] > d_mean:
+                f[i][x][z] = 'D'
+            elif d[i][x][z] == d_mean: 
+                f[i][x][z] = 'C'
+            elif d[i][x][z] < d_mean: 
+                f[i][x][z] = 'B'
+print(f)
