@@ -1,82 +1,97 @@
 #1. Import the NUMPY package under the name np.
-
-
+import numpy as np
 
 #2. Print the NUMPY version and the configuration.
-
+print(np.version.version)
 
 
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
-
+a = np.random.rand(2,3,5)
 
 
 #4. Print a.
-
-
+print(a)
 
 #5. Create a 5x2x3 3-dimensional array with all values equaling 1.
 #Assign the array to variable "b"
-
-
+b = np.full((5,2,3),1, dtype=int)
 
 #6. Print b.
-
+print(b)
 
 
 #7. Do a and b have the same size? How do you prove that in Python code?
-
-
-
+print(a.shape==b.shape)
 
 #8. Are you able to add a and b? Why or why not?
-
-
+#no, 2 arrays can be added if they have the same number of rows and columns
+if a.shape == b.shape:
+        new_array = np.add(a,b)
+        print(new_array)
+else:
+        print("a cannot be added to b")
 
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
+c = np.transpose(b, (1,2,0))
 
 
 
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
-
+#yes, 2 arrays can be added if they have the same number of rows and columns
+d = np.add(a,c)
 
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
-
-
+#now can be added 1 to each other as they have same shape
+print("a = ", a,"\n")
+print("d =", d)
 
 
 #12. Multiply a and c. Assign the result to e.
-
-
+e = np.multiply(a,c)
 
 #13. Does e equal to a? Why or why not?
-
-
+#yes, as b is an arr of 1 vals
+print(np.array_equal(e,a))
 
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
-
-
+d_max = np.amax(d)
+d_min = np.amin(d)
+d_mean = np.mean(d)
 
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
+f = np.empty((2,3,5),dtype=int)
 
 
 
-
-"""
 #16. Populate the values in f. For each value in d, if it's larger than d_min but smaller than d_mean, assign 25 to the corresponding value in f.
-If a value in d is larger than d_mean but smaller than d_max, assign 75 to the corresponding value in f.
-If a value equals to d_mean, assign 50 to the corresponding value in f.
-Assign 0 to the corresponding value(s) in f for d_min in d.
-Assign 100 to the corresponding value(s) in f for d_max in d.
-In the end, f should have only the following values: 0, 25, 50, 75, and 100.
-Note: you don't have to use Numpy in this question.
-"""
+#If a value in d is larger than d_mean but smaller than d_max, assign 75 to the corresponding value in f.
+#If a value equals to d_mean, assign 50 to the corresponding value in f.
+#Assign 0 to the corresponding value(s) in f for d_min in d.
+#Assign 100 to the corresponding value(s) in f for d_max in d.
+#In the end, f should have only the following values: 0, 25, 50, 75, and 100.
+#Note: you don't have to use Numpy in this question.
+z = []
+for a in d:
+        for r in a:
+                for c in r:
+                        if d_min < c < d_mean:
+                                f = int(25)
+                        elif d_mean < c < d_max:
+                                f = int(75)
+                        elif c == d_mean:
+                                f = int(50)
+                        elif c == d_min:
+                                f = int(0)
+                        elif c == d_max:
+                                f = int(100)
+                        z.append(f)
+print(np.array(z).reshape(2,3,5))
 
-
-
+s = (np.array(z).reshape(2,3,5))
 
 """
 #17. Print d and f. Do you have your expected f?
@@ -97,10 +112,7 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
        [[ 25.,  25.,  25.,  25., 100.],
         [ 75.,  75.,  75.,  75.,  75.],
         [ 25.,  75.,   0.,  75.,  75.]]])
-"""
 
-
-"""
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
 ("A", "B", "C", "D", and "E") to label the array elements? You are expecting the result to be:
 array([[[ 'D',  'D',  'D',  'B',  'D'],
@@ -112,3 +124,11 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+#menudo cambio gracias a la pista de no usar numpy!!
+bonus = np.empty((2,3,5),dtype=int)
+bonus = np.where(s==0,"A", bonus)
+bonus = np.where(s==25,"B", bonus)
+bonus = np.where(s==50,"C", bonus)
+bonus = np.where(s==75,"D", bonus)
+bonus = np.where(s==100,"E", bonus)
+print(bonus)
