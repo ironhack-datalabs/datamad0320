@@ -83,11 +83,32 @@ Assign 0 to the corresponding value(s) in f for d_min in d.
 Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
-""
+"""
+def funcionValues (d):
+        f = np.empty(d.shape)
+        d = d.ravel()
+        fc = []
+        for e in d:
+                if e > d_min and e < d_mean:
+                        fc.append(25)
+                elif e > d_mean and e < d_max:
+                        fc.append(75)       
+                elif e == d_mean:
+                        fc.append(50)
+                elif e == d_min:
+                        fc.append(0)
+                elif e == d_max:
+                        fc.append(100)
+                else:
+                        fc.append(e)
+       
+        fs = (np.array(fc)).reshape((2, 3, 5))
+        
+        return f + fs
+print("SOL =",funcionValues(d))
 
 
-
-""
+"""
 #17. Print d and f. Do you have your expected f?
 For instance, if your d is:
 array([[[1.85836099, 1.67064465, 1.62576044, 1.40243961, 1.88454931],
