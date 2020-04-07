@@ -96,27 +96,34 @@
 
 
 # Cuenta el número de líneas que tiene el archivo sed.txt dentro de la carpeta lorem
+# wc -l lorem/sed.txt # Muestra el n. líneas y el nombre del archivo
 # cat lorem/sed.txt | wc -l
 
 
 
 # Cuenta el número de archivos que empiezan por lorem que están en 
 # este directorio y en directorios internos.
-##### ??????ls -aR *lorem* | wc -w #3
+# find "lorem" | wc -l
+# ls -R | grep "lorem" | wc -l # Lista las carpetas que contengan "lorem" y lista el path 
+                               # ./lorem con los ficheros que se llaman "lorem", de modo
+                               # que cuenta dos veces cada carpeta "lorem"
 
 
 
 # Encuentra todas las apariciones de et en at.txt dentro de la carpeta lorem
-#### ???cat lorem/at.txt | grep "et" # Muestra el texto con las palabras "et" subrayadas
+# cat lorem/at.txt | grep "et" # Escribiéndolo directamente por consola, muestra el texto 
+                             # con el strin "et" en rojo (incluyendo las palabras que 
+                             # contengan "et")
+
 
 
 # Cuenta el número de apariciones del string et en at.txt dentro de la carpeta lorem.
-#### ??? cat lorem/at.txt | grep "et" | wc -w
+# cat lorem/at.txt | grep "et" | wc -l
+
 
 
 # Cuenta el número de apariciones del string et en todos los archivos del directorio lorem-copy.
-#cat lorem-copy/*.txt | grep "et"| wc -l
-
+# cat lorem-copy/*.txt | grep "et"| wc -l
 
 
 
@@ -151,18 +158,31 @@
     #Imprime las longitudes de los nombres de los ficheros
     #Imprime outputs con la siguiente estructura: lorem has 5 characters lenght
 
-#for file in lorem:
-#    print(file)
-
+"""
+for file in "lorem/*.c" #*.c
+    do 
+    echo "Processing file.." 
+    done
+"""
 #Muestra los procesos de forma jerárquica que se están ejecutando en tu ordenador:
 
     #Usando el comando top o htop
     #Usando el comando ps con argumentos
 
 #Muestra información sobre tu procesador por pantalla
+# top # Muestra los procesos que se están llevando a cabo en el ordenador
+
+
 
 #Crea 3 alias y haz que estén disponibles cada vez que inicias sesión
+# alias gs="git status"
+
+
 
 #Comprime las carpetas lorem y lorem-copy en un archivo llamado lorem-compressed.tar.gz
+# tar -czvf lorem-compressed.tar.gz lorem lorem-copy
+
+
 
 #Descomprime el archivo lorem-compressed.tar.gz en la carpeta lorem-uncompressed
+# tar -xvf lorem-compressed.tar.gz lorem-uncompressed # Muestra las carpetas y archivos
