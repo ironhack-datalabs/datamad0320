@@ -21,7 +21,6 @@ name=miriam
 echo "$name"
 mkdir "$name"
 rmdir "$name"
-ls ./lorem | wc -l
 for file in lorem/*;do
     ff=`echo $file | cut -d '/' -f2 | cut -d '.' -f1`
     echo ${ff} has ${#ff} character length
