@@ -73,25 +73,22 @@ Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
-lis=[]
-def popu(a,f):
-        for b in a:
-                for c in b:
-                        for d in c:
-                                if d>np.amin(a) and d<np.mean(a):
-                                        f[b][c] =25
-                                elif d>np.mean(a) and d<np.amax(a):
-                                        f[b][c] =75
-                                elif d==np.mean(a):
-                                        f[b][c] = 50
-                                elif d ==np.amin(a):
-                                        f[b][c] =0
-                                elif d==np.amax(a):
-                                        f[b][c] =100
-        return f
 
-print(popu(d,f))
-
+for i,a in enumerate(d):
+        for j,b in enumerate(a):
+                for k,c in enumerate(b):
+                        if c>np.amin(d) and c<np.mean(d):
+                                f[i,j,k] =25
+                        elif c>np.mean(d) and c<np.amax(d):
+                                f[i,j,k] =75
+                        elif c==np.mean(d):
+                                f[i,j,k] = 50
+                        elif c==np.amin(d):
+                                f[i,j,k] =0
+                        elif c==np.amax(d):
+                                f[i,j,k] =100
+                        
+print(f)
 
 
 
