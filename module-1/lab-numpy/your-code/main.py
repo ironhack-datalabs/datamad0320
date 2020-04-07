@@ -94,10 +94,20 @@ Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 
+for a in b:
+    for c in a:
+        for e in c:
+            if d_mean>e>d_max:
+                f.fill(75)
+            elif e == d_mean:
+                f.fill(50)
+            elif e == d_min:
+                f.fill(0)
+            elif e == d_max:
+                f.fill(100)
 
 
-
-
+print(f)
 
 #17. Print d and f. Do you have your expected f?
 For instance, if your d is:
@@ -119,6 +129,8 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
         [ 25.,  75.,   0.,  75.,  75.]]])
 
 
+print(d)
+print(f)
 
 
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
@@ -132,3 +144,20 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 
+f=f.astype(str)
+
+for a in range(2):
+    for b in range(3):
+        for c in range(5):
+            if d[a][b][c] < d_mean: 
+                f[a][b][c] = "B"
+            elif d[a][b][c] > d_mean:
+                f[a][b][c] = "D"
+            elif d[a][b][c] == d_mean: 
+                f[a][b][c] = "C"  
+            elif d[a][b][c] == d_min: 
+                f[a][b][c] = "A"
+            elif d[a][b][c] == d_max: 
+                f[a][b][c] = "E"
+       
+print(f) 
