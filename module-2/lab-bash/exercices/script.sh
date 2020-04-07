@@ -92,13 +92,25 @@ for file in $( ls lorem); do echo -n "$file" | wc -m; done
 #3
 
 
-* Muestra los procesos de forma jerárquica que se están ejecutando en tu ordenador:
+#Muestra los procesos de forma jerárquica que se están ejecutando en tu ordenador:
     1. Usando el comando top o htop
     2. Usando el comando ps con argumentos
 
-* Muestra información sobre tu procesador por pantalla
 
-* Crea 3 alias y haz que estén disponibles cada vez que inicias sesión
+#1
+top
+
+#2
+ps -ejH
+
+#Muestra información sobre tu procesador por pantalla
+sudo dmidecode
+
+#Crea 3 alias y haz que estén disponibles cada vez que inicias sesión
+
+echo "alias ejercicios_ironhack='cd ~david/ironhack/datamad0320/'" >> ~/.zshrc
+echo "alias escritorio='cd ~/Escritorio" >> ~/.zshrc
+echo "alias notebook='jupyter notebook'" >> ~/.zshrc
 
 * Comprime las carpetas lorem y lorem-copy en un archivo llamado lorem-compressed.tar.gz
 
