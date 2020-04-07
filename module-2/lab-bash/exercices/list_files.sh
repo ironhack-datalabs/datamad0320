@@ -89,6 +89,8 @@ rm -r ../$name
     #Imprime los ficheros
     #Imprime las longitudes de los nombres de los ficheros
     #Imprime outputs con la siguiente estructura: lorem has 5 characters lenght
+    for file in ../lorem/*; do echo -n "$file" | wc -m ; echo "$file"; done
+    #Este no es correcto, consigo llegar al número de palabras por path y no en el formato que piden
 
 
 #Muestra los procesos de forma jerárquica que se están ejecutando en tu ordenador:
