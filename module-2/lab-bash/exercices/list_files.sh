@@ -50,11 +50,14 @@ lscpu
 alias w="who"
 alias p="ps -ef"
 alias l="lscpu"
+
 cat ~/.bashrc >>
 alias w="who"
 alias p="ps -ef" 
 alias l="lscpu"
+
 tar -zcvf lorem-compressed.tar.gz ../lorem ../lorem-copy/
+
 tar --list --file lorem-compressed.tar.gz 
 mkdir lorem-uncompressed
 tar -xzvf  lorem-compressed.tar.gz -C lorem-uncompressed 
