@@ -65,13 +65,46 @@ cat at.txt | grep 'et' | wc -l
 #Cuenta el número de apariciones del string et en todos los archivos del directorio lorem-copy.
 grep 'et' * | wc -l
 
+#BONUS
+
+#Almacena en una variable name tu nombre.
+name="carolina"
+
+#Imprime esa variable.
+echo $name
+
+#Crea un directorio nuevo que se llame como el contenido de la variable name.
+mkdir $name
+
+#Elimina ese directorio.
+rmdir carolina
+
+#Por cada archivo dentro de la carpeta lorem imprime el número de carácteres que tienen sus nombres. 
+#Intenta primero mostrar los archivos mediante un bucle for
 
 
 
+#Imprime los ficheros
+ls
+#Imprime las longitudes de los nombres de los ficheros
+ls | awk '{print length}'
+#Imprime outputs con la siguiente estructura: lorem has 5 characters lenght
 
+if [ ls | awk '{print length}' == 5  ]
+then
+    echo "lorem has 5 characters lenght"
 
+fi
 
+#OR
 
+for e in ls
+do
+	if [ ls | awk '{print length}' == 5 ]
+	then
+		echo "lorem has 5 characters lenght"
+	fi
+done
 
 
 
