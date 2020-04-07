@@ -116,6 +116,8 @@ ps -am
 
 #Muestra información sobre tu procesador por pantalla
 
+ sysctl -n machdep.cpu.brand_string
+ 
 #Crea 3 alias y haz que estén disponibles cada vez que inicias sesión
 
 #Comprime las carpetas lorem y lorem-copy en un archivo llamado lorem-compressed.tar.gz
