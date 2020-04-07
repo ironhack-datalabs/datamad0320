@@ -85,26 +85,29 @@ In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
 def funcionValues (d):
-        f = np.empty(d.shape)
+       
         d = d.ravel()
-        fc = []
+        d_max = np.max(d)
+        d_min = np.min(d)
+        d_mean = np.mean(d)
+        f = []
         for e in d:
                 if e > d_min and e < d_mean:
-                        fc.append(25)
+                        f.append(25.)
                 elif e > d_mean and e < d_max:
-                        fc.append(75)       
+                        f.append(75.)       
                 elif e == d_mean:
-                        fc.append(50)
+                        f.append(50.)
                 elif e == d_min:
-                        fc.append(0)
+                        f.append(0.)
                 elif e == d_max:
-                        fc.append(100)
+                        f.append(100.)
                 else:
-                        fc.append(e)
-       
-        fs = (np.array(fc)).reshape((2, 3, 5))
+                        f.append(0.)
         
-        return f + fs
+        
+        f = (np.array(f)).reshape((2, 3, 5))
+        return f
 print("SOL =",funcionValues(d))
 
 
@@ -128,8 +131,14 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
         [ 75.,  75.,  75.,  75.,  75.],
         [ 25.,  75.,   0.,  75.,  75.]]])
 """
+d = np.array([[[1.85836099, 1.67064465, 1.62576044, 1.40243961, 1.88454931],
+        [1.75354326, 1.69403643, 1.36729252, 1.61415071, 1.12104981],
+        [1.72201435, 1.1862918 , 1.87078449, 1.7726778 , 1.88180042]],
 
-
+       [[1.44747908, 1.31673383, 1.02000951, 1.52218947, 1.97066381],
+        [1.79129243, 1.74983003, 1.96028037, 1.85166831, 1.65450881],
+        [1.18068344, 1.9587381 , 1.00656599, 1.93402165, 1.73514584]]])
+print("SOLd17 =",funcionValues(d)) #Coincide
 """
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
 ("A", "B", "C", "D", and "E") to label the array elements? You are expecting the result to be:
