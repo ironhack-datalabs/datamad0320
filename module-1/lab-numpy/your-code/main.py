@@ -139,6 +139,7 @@ d = np.array([[[1.85836099, 1.67064465, 1.62576044, 1.40243961, 1.88454931],
         [1.79129243, 1.74983003, 1.96028037, 1.85166831, 1.65450881],
         [1.18068344, 1.9587381 , 1.00656599, 1.93402165, 1.73514584]]])
 print("SOLd17 =",funcionValues(d)) #Coincide
+
 """
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
 ("A", "B", "C", "D", and "E") to label the array elements? You are expecting the result to be:
@@ -150,4 +151,30 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'D',  'D',  'D',  'D',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
+
 """
+def label(d):
+
+        d = d.ravel()
+        d_max = np.max(d)
+        d_min = np.min(d)
+        d_mean = np.mean(d)
+        f = []
+        for e in d:
+                if e > d_min and e < d_mean:
+                        f.append("B")
+                elif e > d_mean and e < d_max:
+                        f.append("D")       
+                elif e == d_mean:
+                        f.append("C")
+                elif e == d_min:
+                        f.append("A")
+                elif e == d_max:
+                        f.append("E")
+                else:
+                        f.append("")
+        
+        
+        f = (np.array(f)).reshape((2, 3, 5))
+        return f
+print("SOL =",label(d))
