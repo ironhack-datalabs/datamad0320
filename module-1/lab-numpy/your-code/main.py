@@ -10,9 +10,10 @@ print(np.show_config())
 
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
-a = np.random.random((2,3,5))
+a = np.random.random((2,3,5))  # entre 0 y 1. Puedo no poner las dimensiones
+# a = np.random.randint(0, high=100, size=(2,3,5)) # entre los valores que especifique en low y high
+# a = np.random.rand(2,3,5) # entre 0 y 1. Tengo que poner las dimensiones
 
-#a = np.random.random.reshape((2,3,5))
 
 #4. Print a.
 print(a)
@@ -57,11 +58,14 @@ print(d)
 #12. Multiply a and c. Assign the result to e.
 
 e = a*c
+
 print(e)
+
 
 #13. Does e equal to a? Why or why not?
 
-# Yes, because all values in c are 1, and multiply all values in array a by 1 is the same.
+# Yes, because all values in c are 1, and multiply all values in array a by 1 is the same. 
+# If np.dot could be performed (not because the shapes of arrays) then a and e would be different.
 
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
@@ -73,40 +77,34 @@ d_mean = np.mean(d)
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
-f = np.empty((2,3,5))
+f = np.empty((2,3,5), dtype=object)
 
 
 
 #16. Populate the values in f. For each value in d, if it's larger than d_min but smaller than d_mean, assign 25 to the corresponding value in f.
-If a value in d is larger than d_mean but smaller than d_max, assign 75 to the corresponding value in f.
+"""If a value in d is larger than d_mean but smaller than d_max, assign 75 to the corresponding value in f.
 If a value equals to d_mean, assign 50 to the corresponding value in f.
 Assign 0 to the corresponding value(s) in f for d_min in d.
 Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
-Note: you don't have to use Numpy in this question.
+Note: you don't have to use Numpy in this question."""
 
-for lista in d:
-        for sublista in lista:
-                for e in sublista:
-                        if e == d_max:
-                                ff = 100
-                        elif e == d_min:
-                                ff = 0
-                        elif e == d_mean:
-                                ff = 50
-                        elif e>d_max and e<d_mean:
-                                ff = 75
-                        elif e>d_min and e<d_mean:
-                                ff = 25
+dic = {d_max:"100", d_min:"0", d_mean:"50"}
+       
+for i in range(2):
+    for j in range(3):
+        for k in range(5):
+            for key in dic.keys():
+                if d[i][j][k] == key:
+                    f[i][j][j] = dic[key]
+            if (d[i][j][k] <d_max) & (d[i][j][k] > d_mean):
+                f[i][j][k] = "75"
+            elif (d[i][j][k] < d_mean) & (d[i][j][k] > d_min):
+                f[i][j][k] = "25"
+                
 
-f = 
-
-
-
-
-"""
 #17. Print d and f. Do you have your expected f?
-For instance, if your d is:
+"""For instance, if your d is:
 array([[[1.85836099, 1.67064465, 1.62576044, 1.40243961, 1.88454931],
         [1.75354326, 1.69403643, 1.36729252, 1.61415071, 1.12104981],
         [1.72201435, 1.1862918 , 1.87078449, 1.7726778 , 1.88180042]],
@@ -122,13 +120,16 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
 
        [[ 25.,  25.,  25.,  25., 100.],
         [ 75.,  75.,  75.,  75.,  75.],
-        [ 25.,  75.,   0.,  75.,  75.]]])
-"""
+        [ 25.,  75.,   0.,  75.,  75.]]])"""
 
 
-"""
+print(d)
+print(f) # En la declaración de esta variable he puesto que dtype es object para que no me diera problema
+        # hay valores que salen None
+
+
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
-("A", "B", "C", "D", and "E") to label the array elements? You are expecting the result to be:
+"""("A", "B", "C", "D", and "E") to label the array elements? You are expecting the result to be:
 array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'D',  'D',  'B',  'B',  'B'],
         [ 'D',  'B',  'D',  'D',  'D']],
@@ -136,5 +137,16 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
        [[ 'B',  'B',  'B',  'B',  'E'],
         [ 'D',  'D',  'D',  'D',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
-Again, you don't need Numpy in this question.
-"""
+Again, you don't need Numpy in this question."""
+
+m = np.empty((2,3,5),dtype=object)
+dic_f = {"0":"A", "25":"B", "50":"C", "75":"D", "100":"E"}
+
+for i in range(2):
+    for j in range(3):
+        for k in range(5):
+            for key in dic_f.keys():
+                if f[i][j][k] == key:
+                    m[i][j][j] = dic_f[key]
+
+print(m) # hay valores que salen None
