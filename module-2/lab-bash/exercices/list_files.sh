@@ -91,9 +91,9 @@ rm -r ../$name
     #Imprime los ficheros
 for file in $(ls ../lorem); do echo $file; done
     #Imprime las longitudes de los nombres de los ficheros
-for file in $(ls ../lorem); do echo ${#file%.txt}; done
+for file in $(ls ../lorem); do echo ${file%.*} | wc -m ; done
     #Imprime outputs con la siguiente estructura: lorem has 5 characters lenght
-for file in $(ls ../lorem); do echo ${file%.txt} has ${#file%.txt} characters length; done
+for file in $(ls ../lorem); do echo ${file%.*} has `echo ${file%.*} | wc -m` characters length; done
 #Esto me funciona en la terminal, pero al correr el script me da error, parece que no es lenguaje bash, sino sh. Funciona con sh list_files.sh.
 
 
