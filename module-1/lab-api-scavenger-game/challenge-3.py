@@ -12,7 +12,7 @@ apiKey = os.getenv("GITHUB_APIKEY")
 #Define headers:
 headers = {"Authorization":f"token {apiKey}"}
 
-#Making the request to the github api
+#Making the request to the github api to get the root content
 url = "https://api.github.com/repos/ironhack-datalabs/scavenger/contents/"
 res = requests.get(url, headers = headers)
 root = res.json()
