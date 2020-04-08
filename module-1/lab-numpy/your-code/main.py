@@ -144,6 +144,5 @@ for h,x in enumerate(new_d):
                         elif z==np.amax(new_d):
                                 new_f[h,i,j] = 'E'
 
-
 print(new_d)
 print(new_f)
