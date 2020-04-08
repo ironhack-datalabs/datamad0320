@@ -1,4 +1,6 @@
 
+#!/bin/sh
+
 # Imprime en consola Hello World.
 echo 'Hello World'
 
@@ -91,8 +93,8 @@ for file in $(ls ../lorem); do echo $file; done
     #Imprime las longitudes de los nombres de los ficheros
 for file in $(ls ../lorem); do echo ${#file%.txt}; done
     #Imprime outputs con la siguiente estructura: lorem has 5 characters lenght
-for file in $(ls ../lorem); do echo $file has ${#file%.txt} words; done
-#Esto me funciona en la terminal, pero al correr el script me da error, no se por qué.
+for file in $(ls ../lorem); do echo ${file%.txt} has ${#file%.txt} characters length; done
+#Esto me funciona en la terminal, pero al correr el script me da error, parece que no es lenguaje bash, sino sh. Funciona con sh list_files.sh.
 
 
 #Muestra los procesos de forma jerárquica que se están ejecutando en tu ordenador:
