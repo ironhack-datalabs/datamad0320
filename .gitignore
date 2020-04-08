@@ -2,4 +2,8 @@
 .idea
 venv/
 .ipynb_checkpoints
+lab-api-scavenger-game
 .env
+=======
+__pycache__/
+master
