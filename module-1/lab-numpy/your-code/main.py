@@ -74,24 +74,21 @@ In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
 
-for i,a in enumerate(d):
-        for j,b in enumerate(a):
-                for k,c in enumerate(b):
-                        if c>np.amin(d) and c<np.mean(d):
-                                f[i,j,k] =25
-                        elif c>np.mean(d) and c<np.amax(d):
-                                f[i,j,k] =75
-                        elif c==np.mean(d):
-                                f[i,j,k] = 50
-                        elif c==np.amin(d):
-                                f[i,j,k] =0
-                        elif c==np.amax(d):
-                                f[i,j,k] =100
+for h,e in enumerate(d):
+        for i,f in enumerate(e):
+                for j,g in enumerate(f):
+                        if (g>np.amin(d) and g<np.mean(d)):
+                                f[h,i,j] =25
+                        elif (g>np.mean(d) and g<np.amax(d)):
+                                f[h,i,j] =75
+                        elif g==np.mean(d):
+                                f[h,i,j] = 50
+                        elif g==np.amin(d):
+                                f[h,i,j] =0
+                        elif g==np.amax(d):
+                                f[h,i,j] =100
                         
-print(f)
-
-
-
+print(np.f)
 
 """
 #17. Print d and f. Do you have your expected f?
