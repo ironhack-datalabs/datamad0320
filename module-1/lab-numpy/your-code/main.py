@@ -1,71 +1,82 @@
 #1. Import the NUMPY package under the name np.
-
+import numpy as np
+import random
 
 
 #2. Print the NUMPY version and the configuration.
-
+print(np.version.version)
+print(np.show_config())
 
 
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
+a = np.random.random((2,3,5))
 
-
+#a = np.random.random.reshape((2,3,5))
 
 #4. Print a.
-
+print(a)
 
 
 #5. Create a 5x2x3 3-dimensional array with all values equaling 1.
 #Assign the array to variable "b"
-
+b = np.ones((5,2,3))
 
 
 #6. Print b.
-
+print(b)
 
 
 #7. Do a and b have the same size? How do you prove that in Python code?
-
-
+#False
+print(a.shape==b.shape)
 
 
 #8. Are you able to add a and b? Why or why not?
 
+# No, because to add them they have to have the same shape
 
 
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
 
-
+c = b.reshape(2,3,5)
+print(c)
 
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
-
-
+d = a+c
+# Now it works because de dimensions or shapes are the same in the two arrays.
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
 
+print(a)
+print(d)
 
+# Values in a are between 0 and 1. Array d is the result of add 1 (because of c) to every value in a.
 
 
 #12. Multiply a and c. Assign the result to e.
 
-
+e = a*c
+print(e)
 
 #13. Does e equal to a? Why or why not?
 
-
+# Yes, because all values in c are 1, and multiply all values in array a by 1 is the same.
 
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
 
-
+d_max = np.max(d)
+d_min = np.min(d)
+d_mean = np.mean(d)
 
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
+f = np.empty((2,3,5))
 
 
 
-"""
 #16. Populate the values in f. For each value in d, if it's larger than d_min but smaller than d_mean, assign 25 to the corresponding value in f.
 If a value in d is larger than d_mean but smaller than d_max, assign 75 to the corresponding value in f.
 If a value equals to d_mean, assign 50 to the corresponding value in f.
@@ -73,7 +84,22 @@ Assign 0 to the corresponding value(s) in f for d_min in d.
 Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
-"""
+
+for lista in d:
+        for sublista in lista:
+                for e in sublista:
+                        if e == d_max:
+                                ff = 100
+                        elif e == d_min:
+                                ff = 0
+                        elif e == d_mean:
+                                ff = 50
+                        elif e>d_max and e<d_mean:
+                                ff = 75
+                        elif e>d_min and e<d_mean:
+                                ff = 25
+
+f = 
 
 
 
