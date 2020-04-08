@@ -1,5 +1,5 @@
-"""# Imprime en consola Hello World
-echo """"Hello World""""
+# Imprime en consola Hello World
+echo "Hello World"
 
 # Crea un directorio nuevo llamado new_dir
 mkdir new_dir
@@ -35,7 +35,7 @@ cat lorem-copy/sed.txt | tail -n 3
 
 # Añade Homo homini lupus. al final de archivo sed.txt dentro de la carpeta lorem-copy.
 # lo concatena 
-echo """"Homo homini lupus."""" >> lorem-copy/sed.txt
+echo "Homo homini lupus." >> lorem-copy/sed.txt
 
 # Visualiza las últimas 3 líneas del archivo sed.txt dentro de la carpeta lorem-copy. Deberías ver ahora Homo homini lupus.
 cat lorem-copy/sed.txt | tail -n 3
@@ -67,13 +67,14 @@ ls -l lorem | wc -l # obtengo un resultado de 4
 # Encuentra todas las apariciones de et en at.txt dentro de la carpeta lorem.
 tr -s ' ' '\n' < lorem-copy/at.txt | grep -c 'et'  # es sensible a mayusculas y minusculas, pero no a estar concatenado a otro string. 
                                                     #Si está la palabra dos veces concatenada solo cuenta una
-    # grep -c """"et"""" lorem/at.txt --> cuenta las líneas donde hay match
-grep -o """"et"""" < lorem-copy/at.txt | wc -l
+    # grep -c "et" lorem/at.txt --> cuenta las líneas donde hay match
+grep -o "et" < lorem-copy/at.txt | wc -l
 
 # Cuenta el número de apariciones del string et en at.txt dentro de la carpeta lorem.
+# No he conseguido que me busque solo el string "et"
 
 # Cuenta el número de apariciones del string et en todos los archivos del directorio lorem-copy.
-"""
+cat lorem-copy/*.txt | grep -o "et" | wc -l  # busca todos los et, pero no el string "et"
 
 # BONUS
 #Almacena en una variable name tu nombre.
@@ -112,13 +113,13 @@ lscpu
 cat /proc/cpuinfo
 
 # Crea 3 alias y haz que estén disponibles cada vez que inicias sesión
-
+# No lo he entendido. Alias como usuarios o alias para los comandos?
 
 # Comprime las carpetas lorem y lorem-copy en un archivo llamado lorem-compressed.tar.gz
 tar -czvf lorem-compressed.tar.gz lorem lorem-copy
 
 # Descomprime el archivo lorem-compressed.tar.gz en la carpeta lorem-uncompressed
 tar -xzvf lorem-compressed.tar.gz --directory lorem-uncompressed
-tar -xzvf lorem-compressed.tar.gz -C lorem-uncompressed
+tar -xzvf lorem-compressed.tar.gz -C lorem-uncompressed # en caso de que el directorio estuviese en otro path
 
 
