@@ -25,7 +25,7 @@ def decoding(s):
     return string
 
 ##Loop that navigates the root. If there is a dir, the loop goes into the directory, then check for the file names
-# and if scavenger is in the name, then it request the file and extract the file name and the content
+# and if scavenger is in the name, then it request the file and extract the file name and the content (decoded and coded in ascii) in a tuple.
 lst = []
 for e in root:
     if e['type']=='dir':
@@ -39,6 +39,16 @@ for e in root:
                 scab = res.json()
                 lst.append((scab['name'],decoding(scab['content'])))
 
+#Handling the resulting list:
 lst.sort()
 message = [e for i,e in lst]
 print(' '.join(message[i]+message[i+1] for i in range(0,len(message),2)))
+
+##Empecé haciéndolo también navegando el repositorio 'tree', pero el código era prácticamente igual, así que lo dejé.
+
+##Para el bonus, he intentado añadir un fichero desde la terminal usando el siguiente comando, pero no hace nada, ni siquiera me lanza un error...:
+# curl -u DavidCarricondo:$GITHUB_APIKEY -X PUT \
+#       -d'{"message": "my commit message", \
+#             "committer": { "name": "Jhon the revelator", "email": "arroba@github.com" },\
+#                "content": "bXkgbmUgY29udGVudHM="}'\
+#        http://api.github.com/repos/DavidCarricondo/test-ironhack/test.txt 
