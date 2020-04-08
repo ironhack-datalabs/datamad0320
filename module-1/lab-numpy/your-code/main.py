@@ -8,8 +8,8 @@ print(np.__version__)
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 a = np.random.randint(0,10,(2,3,5))
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
-a2 = np.random.random((2,3,5))
-a3 = np.arange(0,30).reshape((2,3,5))
+#a2 = np.random.random((2,3,5))
+#a3 = np.arange(0,30).reshape((2,3,5))
 
 #4. Print a.
 #print(a)
@@ -23,11 +23,11 @@ b= np.ones((5,3,2))
 
 #7. Do a and b have the same size? How do you prove that in Python code?
         #print(b.T)
-def shape(a,b):
-        if a.shape == b.shape:
-                print(True)
-        else:
-                print(False)
+# def shape(a,b):
+#         if a.shape == b.shape:
+#                 print(True)
+#         else:
+#                 print(False)
 
 #shape(a,b)
 
@@ -40,29 +40,28 @@ def shape(a,b):
 c=b.T
 
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
-d=np.concatenate((a, c))
+d=(a+c)
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
 #print(a)
 #print(d)
 
 #12. Multiply a and c. Assign the result to e.
-e = a*c
+#e = a*c
 
 #13. Does e equal to a? Why or why not?
-if a.all() == e.all():
-        print("a is equal to e")
-else:
-        print("a is diffrent to e")
+# if a.all() == e.all():
+#         print("a is equal to e")
+# else:
+#         print("a is diffrent to e")
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
-d_max = np.amax(d)
-d_min = np.amin(d)
-d_mean = np.mean(d)
+# d_max = np.amax(d)
+# d_min = np.amin(d)
+# d_mean = np.mean(d)
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
-f=np.empty((2,3,5))
-print(d)
+# f=np.empty((2,3,5))
 
 """
 #16. Populate the values in f. For each value in d, if it's larger than d_min but smaller than d_mean, assign 25 to the corresponding value in f.
@@ -74,21 +73,25 @@ In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
 
-for h,e in enumerate(d):
-        for i,f in enumerate(e):
-                for j,g in enumerate(f):
-                        if (g>np.amin(d) and g<np.mean(d)):
+d_max = np.amax(d)
+d_min = np.amin(d)
+d_mean = np.mean(d)
+
+f=np.f=np.empty((2,3,5))
+for h,x in enumerate(d):
+        for i,y in enumerate(x):
+                for j,z in enumerate(y):
+                        if (z>np.amin(d) and z<np.mean(d)):
                                 f[h,i,j] =25
-                        elif (g>np.mean(d) and g<np.amax(d)):
+                        elif (z>np.mean(d) and z<np.amax(d)):
                                 f[h,i,j] =75
-                        elif g==np.mean(d):
+                        elif z==np.mean(d):
                                 f[h,i,j] = 50
-                        elif g==np.amin(d):
+                        elif z==np.amin(d):
                                 f[h,i,j] =0
-                        elif g==np.amax(d):
+                        elif z==np.amax(d):
                                 f[h,i,j] =100
-                        
-print(np.f)
+#print(f)
 
 """
 #17. Print d and f. Do you have your expected f?
@@ -124,3 +127,23 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+new_f = np.new_f = np.empty((2,3,5))
+new_d = d.astype(str)
+
+for h,x in enumerate(new_d):
+        for i,y in enumerate(x):
+                for j,z in enumerate(y):
+                        if (z>np.amin(new_d) and z<np.mean(new_d)):
+                                new_f[h,i,j] = 'A'
+                        elif (z>np.mean(new_d) and z<np.amax(new_d)):
+                                new_f[h,i,j] = 'B'
+                        elif z==np.mean(new_d):
+                                new_f[h,i,j] = 'C'
+                        elif z==np.amin(new_d):
+                                new_f[h,i,j] = 'D'
+                        elif z==np.amax(new_d):
+                                new_f[h,i,j] = 'E'
+
+
+print(new_d)
+print(new_f)
