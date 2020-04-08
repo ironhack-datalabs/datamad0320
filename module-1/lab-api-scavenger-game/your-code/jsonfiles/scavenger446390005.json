@@ -1,0 +1,18 @@
+{
+  "name": ".0005.scavengerhunt",
+  "path": "44639/.0005.scavengerhunt",
+  "sha": "3aaf448b40f878cf3067e2323616143bdde600de",
+  "size": 8,
+  "url": "https://api.github.com/repos/ironhack-datalabs/scavenger/contents/44639/.0005.scavengerhunt?ref=master",
+  "html_url": "https://github.com/ironhack-datalabs/scavenger/blob/master/44639/.0005.scavengerhunt",
+  "git_url": "https://api.github.com/repos/ironhack-datalabs/scavenger/git/blobs/3aaf448b40f878cf3067e2323616143bdde600de",
+  "download_url": "https://raw.githubusercontent.com/ironhack-datalabs/scavenger/master/44639/.0005.scavengerhunt",
+  "type": "file",
+  "content": "cGVyY2VudAo=\n",
+  "encoding": "base64",
+  "_links": {
+    "self": "https://api.github.com/repos/ironhack-datalabs/scavenger/contents/44639/.0005.scavengerhunt?ref=master",
+    "git": "https://api.github.com/repos/ironhack-datalabs/scavenger/git/blobs/3aaf448b40f878cf3067e2323616143bdde600de",
+    "html": "https://github.com/ironhack-datalabs/scavenger/blob/master/44639/.0005.scavengerhunt"
+  }
+}
