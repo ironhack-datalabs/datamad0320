@@ -2,4 +2,8 @@
 .idea
 venv/
 .ipynb_checkpoints
+lab-web-scraping
 .env
+=======
+__pycache__/
+>> master
