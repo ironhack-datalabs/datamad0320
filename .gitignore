@@ -2,4 +2,8 @@
 .idea
 venv/
 .ipynb_checkpoints
+lab-intro-to-scipy
 .env
+=======
+__pycache__/
+master
