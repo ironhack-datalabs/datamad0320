@@ -2,4 +2,8 @@
 .idea
 venv/
 .ipynb_checkpoints
+lab-plotting-multiple-data-series
 .env
+=======
+__pycache__/
+master
