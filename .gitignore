@@ -2,4 +2,8 @@
 .idea
 venv/
 .ipynb_checkpoints
+mongo-project
 .env
+=======
+__pycache__/
+ master
