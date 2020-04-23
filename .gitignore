@@ -2,4 +2,8 @@
 .idea
 venv/
 .ipynb_checkpoints
+lab-hypothesis-testing
 .env
+=======
+__pycache__/
+ master
