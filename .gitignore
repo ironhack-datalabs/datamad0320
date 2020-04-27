@@ -2,4 +2,8 @@
 .idea
 venv/
 .ipynb_checkpoints
+lab-recommender-deepdive
 .env
+=======
+__pycache__/
+ master
