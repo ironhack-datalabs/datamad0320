@@ -2,4 +2,8 @@
 .idea
 venv/
 .ipynb_checkpoints
+ lab-apache-spark
 .env
+=======
+__pycache__/
+master
