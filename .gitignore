@@ -2,4 +2,8 @@
 .idea
 venv/
 .ipynb_checkpoints
+lab-correlation-tests-with-scipy
 .env
+=======
+__pycache__/
+ master
