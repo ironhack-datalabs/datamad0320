@@ -1,0 +1,3 @@
+My repo in github: https://github.com/DavEst91/IH-W6-Chat-Sentiment-Analysis-service/blob/master/README.md
+
+LInk to my API: https://davestchat.herokuapp.com/
