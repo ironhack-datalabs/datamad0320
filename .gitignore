@@ -2,4 +2,8 @@
 .idea
 venv/
 .ipynb_checkpoints
+Kaggle-competition
 .env
+=======
+__pycache__/
+master
