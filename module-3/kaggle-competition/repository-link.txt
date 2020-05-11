@@ -1,0 +1,3 @@
+Link to my repository for the kaggle competition:
+
+https://github.com/DavidCarricondo/Diamond-prices-ML-Kaggle-competition
