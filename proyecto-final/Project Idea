@@ -1,13 +1,63 @@
 ## Titulo proyecto 
 
-[Corto y concreto]
-
+What's My Age Again?
 
 ## Descripción de proyecto 
 
-[máx 200 palabras]
+Age detection in picture or in real-time video using image recognition.
 
 
 ## modulos pyhton, APIs, tecnologias, links de referencia
 
-[max 20 links, minimo 5] 
+
+Dataset: Audience dataset: https://talhassner.github.io/home/projects/Adience/Adience-data.html
+
+other dataset: https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/
+
+I already request access. 
+
+The Adience dataset has 8 classes divided into the following age groups [(0 – 2), (4 – 6), (8 – 12), (15 – 20), (25 – 32), (38 – 43), (48 – 53), (60 – 100)]
+
+Modulos:
+
+- OpenCV
+- Deep learning
+- tensorflow
+- keras
+- caffemodel
+- pytorch
+- Face detection: DNN, Haar cascades, HOG + Linear SVM, Single Shot Detectors (SSDs), etc.
+- For the video: imutils.video
+
+
+Steps:
+
+- Detect faces.
+- Apply the age detector algorithm to predict the age.
+
+
+
+Inspirations for the project:
+
+Goal: https://youtu.be/MlE34NRT10U
+
+deep learning: https://data-flair.training/blogs/deep-learning-tutorial/
+face detection: https://www.learnopencv.com/face-detection-opencv-dlib-and-deep-learning-c-python/
+predict age: https://towardsdatascience.com/predict-age-and-gender-using-convolutional-neural-network-and-opencv-fd90390e3ce6
+predict age: https://www.pyimagesearch.com/2020/04/13/opencv-age-detection-with-deep-learning/
+predict age: https://www.learnopencv.com/age-gender-classification-using-opencv-deep-learning-c-python/
+predict age: https://medium.com/@pavelchernov/age-and-gender-estimation-open-source-projects-overview-simple-project-from-scratch-69581831297e
+
+
+Inspiration for the title:
+
+https://www.youtube.com/watch?v=K7l5ZeVVoCA
+
+
+## Questions: 
+
+- I also have the option to do gender and age. Should I do both? 
+
+- Do I need to train the dataset? In order to get the age detector algorithm.
+
+- The dataset is only photos for what I was able to see. Does it work?
