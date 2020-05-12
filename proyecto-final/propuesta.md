@@ -33,9 +33,15 @@ flask → para la API
 
 - referencias:
 glob  https://docs.python.org/2/library/glob.html
+
 pillow https://pillow.readthedocs.io/en/stable/
+
 OpenCV https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_gui/py_image_display/py_image_display.html
+
 scikit-learn https://scikit-learn.org/stable/supervised_learning.html#supervised-learning
+
 keras https://keras.io/api/preprocessing/image/
+
 pickle https://docs.python.org/3/library/pickle.html
+
 flask https://flask.palletsprojects.com/en/1.1.x/
