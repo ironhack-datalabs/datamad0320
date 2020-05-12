@@ -23,6 +23,8 @@
 Para obtener el dataset me gustaría seguir un esquema parecido a este. Bien ampliar este dataset con artículos más actuales o crearme el mío propio.
 
 - https://www.kaggle.com/hsankesara/medium-articles
+- https://github.com/inespchavarri/Proyecto-Final
+- https://towardsdatascience.com/natural-language-processing-with-tensorflow-e0a701ef5cef
 
 # A TENER EN CUENTA:
 
