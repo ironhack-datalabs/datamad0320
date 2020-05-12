@@ -20,16 +20,16 @@ Plotear la confusion matrix
 - url del dataset en kaggle: https://www.kaggle.com/joangibert/tcga_coad_msi_mss_jpg
 
 - modulos:
-pandas
-numpy
-seaborn 
-matplotlib
-glob → para obtener los paths de todas las imágenes 
-pillow, cv2 → para tratamiento de imagenes
-sklearn → modelos de clasificación de ML y estadística
-keras → redes neuronales
-pickle → guardar un modelo entrenado
-flask → para la API
+    - pandas
+    - numpy
+    - seaborn 
+    - matplotlib
+    - glob → para obtener los paths de todas las imágenes 
+    - pillow, cv2 → para tratamiento de imagenes
+    - sklearn → modelos de clasificación de ML y estadística
+    - keras → redes neuronales
+    - pickle → guardar un modelo entrenado
+    - flask → para la API
 
 - referencias:
 
