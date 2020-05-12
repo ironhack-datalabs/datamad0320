@@ -1,0 +1,23 @@
+
+Title: What's up, buddy?
+
+Description: In this work we aim to create a Conditional Generative Adversarial Network working as follows: given a picture containing a face and a message, modify the image to reflect the same sentiment as the text. (For example, in a tweet)
+
+Technologies: Keras, tweepy.
+
+Dataset: FER2013 [https://datarepository.wolframcloud.com/resources/FER-2013]
+
+Goals: 
+
+-Level 0:
+	-Implementing CNN described in https://arxiv.org/pdf/1910.05602.pdf in Table IV.
+	-Improve the accuracy of described CNN by appyling data augmentation and data improvement 		 techniques. (https://machinelearningmastery.com/how-to-configure-image-data-augmentation-when-training-deep-learning-neural-networks/) (https://www.mdpi.com/2076-3417/9/21/4678/htm)
+	-Implement some prefabricated face recognition algorithm.
+	-Create a bot via working with tweepy that when mentioned with a photo, applys some filter 		 depending on the sentiment analysis of the photo.
+
+-Level 1:
+	-Create my own face recognition neural network.
+
+-Level 2:
+	-Implement text sentyment analysis (multimodal, if possible)
+	-Create Conditional Generative Adversarial Network (https://pathmind.com/wiki/generative-adversarial-network-gan)
