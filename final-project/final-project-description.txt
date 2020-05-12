@@ -14,9 +14,11 @@ Goals:
 	-Improve the accuracy of described CNN by appyling data augmentation and data improvement 		 techniques. (https://machinelearningmastery.com/how-to-configure-image-data-augmentation-when-training-deep-learning-neural-networks/) (https://www.mdpi.com/2076-3417/9/21/4678/htm)
 	-Implement some prefabricated face recognition algorithm.
 	-Create a bot via working with tweepy that when mentioned with a photo, applys some filter 		 depending on the sentiment analysis of the photo.
+	-Train CNN in google cloud??
 
 -Level 1:
 	-Create my own face recognition neural network.
+	-Use google app engine
 
 -Level 2:
 	-Implement text sentyment analysis (multimodal, if possible)
