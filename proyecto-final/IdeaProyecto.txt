@@ -1,0 +1,27 @@
+Nombre RFC (Reconocimiento de frutas para ciegos)
+
+Descripción:
+La idea del proyecto es con un dataset de kaggle que ya tengo descargado, hacer el análisis de reconocimiento y con una red neuronal o con un sklearn de clasificación múltiple.
+Reconocer las frutas desde la cámara web y con el módulo pyttsx3  decir que fruta es.
+Subirlo a una api para que se pueda usar desde ella. Subir a mongoatlas la base de datos si fuera necesario
+
+Dataset:
+https://www.kaggle.com/moltean/fruits ,   en principio voy a usar este aunque tengo tb 
+https://www.kaggle.com/chrisfilo/fruit-recognition  este me parece muy pesado para su uso.
+
+Módulos para usar:
+Flask
+pandas 
+numpy 
+matplotlib
+Keras
+Cv2
+Os
+Tensoflow
+pyttsx3
+comtypes
+pymongo
+scipy
+bson
+re
+dotenv
