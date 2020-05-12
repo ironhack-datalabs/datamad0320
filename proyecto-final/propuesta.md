@@ -1,4 +1,4 @@
-**Título del proyecto:** Detección de microsatélites en tumores gastrointestinales.
+**Título del proyecto:** Detección de tumores gastrointestinales con microsatélites inestables.
 
 **Descripción del proyecto**
 
