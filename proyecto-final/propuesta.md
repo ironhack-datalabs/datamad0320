@@ -5,7 +5,7 @@
 La inmunoterapia es una estrategia eficaz para el tratamiento de pacientes de diferentes tumores. Sin embargo, en el caso de los pacientes con tumores gastrointestinales solo responden bien a esta terapia aquellos cuyo tumor pertenece al grupo de tumores con microsatélites inestables (MSI).
 La detección de estos microsatélites con diferentes técnicas es muy costosa. Por tanto, se propone generar un modelo que distinga estos dos tipos de tumores (con MSI y sin MSI) a partir de imágenes de biopsias teñidas.
 
-Para ello, el dataset se compone de 192312 imagenes de biopsias de tumores gastrointestinales teñidas: 117273 imagenes de tumores no MSI y 75039 de tumores MSI → problema de clasificación de 2 clases.
+Para ello, disponemos de un dataset con 192312 imagenes de biopsias de tumores gastrointestinales teñidas: 117273 imagenes de tumores no MSI y 75039 de tumores MSI → problema de clasificación de 2 clases.
 
 Etapas:
 
