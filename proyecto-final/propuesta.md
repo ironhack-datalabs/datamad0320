@@ -1,6 +1,7 @@
 **Título del proyecto:** Detección de microsatélites en tumores gastrointestinales.
 
 **Descripción del proyecto**
+
 La inmunoterapia es una estrategia eficaz para el tratamiento de pacientes de diferentes tumores. Sin embargo, en el caso de los pacientes con tumores gastrointestinales solo responden bien a esta terapia aquellos cuyo tumor pertenece al grupo de tumores con microsatélites inestables (MSI).
 La detección de estos microsatélites con diferentes técnicas es muy costosa. Por tanto, lo que se propone es generar un modelo que distinga estos dos tipos de tumores (con MSI y sin MSI) a partir de imágenes de biopsias teñidas.
 
@@ -26,7 +27,7 @@ Plotear la confusion matrix
     - matplotlib
     - glob → para obtener los paths de todas las imágenes 
     - pillow, cv2 → para tratamiento de imagenes
-    - sklearn → modelos de clasificación de ML y estadística
+    - sklearn → modelos de clasificación de ML y módulos de estadística
     - keras → redes neuronales
     - pickle → guardar un modelo entrenado
     - flask → para la API
