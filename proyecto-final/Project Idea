@@ -14,9 +14,10 @@ Dataset: Audience dataset: https://talhassner.github.io/home/projects/Adience/Ad
 
 other dataset: https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/
 
-I already request access. 
+I already requested access for the dataset, because is not public. 
 
 The Adience dataset has 8 classes divided into the following age groups [(0 – 2), (4 – 6), (8 – 12), (15 – 20), (25 – 32), (38 – 43), (48 – 53), (60 – 100)]
+
 
 Modulos:
 
@@ -34,7 +35,6 @@ Steps:
 
 - Detect faces.
 - Apply the age detector algorithm to predict the age.
-
 
 
 Inspirations for the project:
@@ -61,3 +61,10 @@ https://www.youtube.com/watch?v=K7l5ZeVVoCA
 - Do I need to train the dataset? In order to get the age detector algorithm.
 
 - The dataset is only photos for what I was able to see. Does it work?
+
+- Ideal plan: See if a person is lying by micro facial expression. Couldn't find any dataset :(
+
+## PLAN B:
+
+- Create Face ID. 
+- Convert voice into text.
