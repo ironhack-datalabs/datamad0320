@@ -13,7 +13,7 @@ Etapas:
 Plotear la confusion matrix
 ¿Puedo separar desde el principio el dataset en 2 y entrenar secuencialmente?
 2) Generar una API en Flask para pedir al usuario una imagen y devolver la predicción para esa imagen (con la probabilidad de que sea de ese tipo)
-3) Hacer una Docker image
+3) Hacer una imagen de Docker
 4) Hacer el deploy de la API a Heroku
 
 **Info sobre dataset y módulos y librerías de python a usar**
