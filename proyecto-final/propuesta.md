@@ -10,7 +10,7 @@ Etapas:
 
 1) Preparar las imágenes y entrenar diferentes modelos de clasificación de ML y redes neuronales. Analizar los scores de los modelos: accuracy, precision, recall, f1.
 Plotear la confusion matrix
-	-¿puedo separar desde el principio el dataset en 2 y entrenar secuencialmente?
+¿Puedo separar desde el principio el dataset en 2 y entrenar secuencialmente?
 2) Generar una API en Flask para pedir al usuario una imagen y devolver la predicción para esa imagen (con la probabilidad de que sea de ese tipo)
 3) Hacer una Docker image
 4) Hacer el deploy de la API a Heroku
@@ -32,6 +32,7 @@ pickle → guardar un modelo entrenado
 flask → para la API
 
 - referencias:
+
 glob  https://docs.python.org/2/library/glob.html
 
 pillow https://pillow.readthedocs.io/en/stable/
