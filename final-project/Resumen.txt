@@ -1,0 +1,32 @@
+Título:
+     ﻿Disease detection with Retinal optical coherence tomography (OCT)
+
+Objetivo: 
+     Crear un modelo capaz de clasificar imágenes OCT según la patología del paciente. Hacer un programa funcional para que pueda
+     ser utilizado por un usuario.
+
+Dataset: 
+     https://www.kaggle.com/paultimothymooney/kermany
+
+
+L1. Procesado de datos con numpy, scipy y PIL.
+L2. Clasificación de las imágenes en CNV, DME, DRUSEN y NORMAL.
+     1. Red neuronal convolucional con Keras para detectar las features. Aplicar aprendizaje de transferencia Inception V3 de Tensorflow.
+     2. Clasificación de imagen con ML, aplicando las librerías sklearn o H2O. Técnicas: segmentación.
+L3. Crear una interfaz gráfica.
+L4. Crear un programa ejecutable.
+L5. Enriquecer el modelo para detectar otras patologías (p.ej. anemia).
+
+
+Otro posible dataset del mismo tema: https://www.kaggle.com/sovitrath/diabetic-retinopathy-224x224-grayscale-images
+
+
+
+
+Más info:
+- Neovascularización Coroidea (CNV, Choroidal Neurovascularization) es la creación de nuevos vasos sanguíneos en la capa coroidea del ojo, y la causa más común de la degeneración de la mácula.
+- Edema Macular diabético (DME, Diabetic Macular Edema): Daño o bloqueo de los vasos sanguíneos de la pared interna anterior del ojo (retina).
+- Las drusas (DRUSEN) son pequeñas acumulaciones de material extracelular de color amarillo que se depositan en la retina.
+
+
+
