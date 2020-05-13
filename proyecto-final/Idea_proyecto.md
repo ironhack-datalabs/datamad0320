@@ -1,4 +1,31 @@
+
 ## IDEA #1
+*   **Titulo proyecto:**
+
+"stickman face"
+
+*   **Descripción de proyecto:**
+
+Reemplazar en una imagen la cara, mano o pies por un dibujo a mano alzada (o con una gui tipo paint)
+
+Primero, con un dataset de dibujos simples de objetos, entrenaría un red neuronal para reconocer dibujos de caras, manos, pies...
+Después entrenaría otra red multi-label para reconocer caras manos, pies de una imagen real. La aplicación substituiría, por ejemplo, la cara de la imagen real por la cara dibujada..
+
+Niveles:
+
+    l1: Clasificación de dibujos
+    l2: Reconocimiento de cara, manos, pies en una imagen
+    l3: Substituir lo reconocido en l2 por un dibujo clasificado en l1
+    l4: Crear una gui con dos ventanas, una tipo paint, otra con la imagen input y que el modelo lo cambie de forma automática.
+    l5. Que la imagen real sea video de la webcam
+    l4: Montar una app en la nube
+Datos:
+
+Dibujos dataset : https://github.com/googlecreativelab/quickdraw-dataset
+
+
+
+## IDEA #2
 *   **Titulo proyecto:**
 
 "Victorianize me"
@@ -35,27 +62,5 @@ pandas, numpy, PIL, keras (para style transfer hay una red ya entrenada en keras
 
 https://keras.io/examples/generative/neural_style_transfer/
 
-## IDEA #2
-*   **Titulo proyecto:**
 
-"stickman face"
-
-*   **Descripción de proyecto:**
-
-Reemplazar en una imagen la cara, mano o pies por un dibujo a mano alzada (o con una gui tipo paint)
-
-Primero, con un dataset de dibujos simples de objetos, entrenaría un red neuronal para reconocer caras, manos, pies...
-Después entrenaría otra red multi-label para reconocer caras manos, pies de una imagen real. La aplicación substituiría, por ejemplo, la cara de la imagen real por la cara dibujada..
-
-Niveles:
-
-    l1: Clasificación de dibujos
-    l2: Reconocimiento de cara, manos, pies en una imagen
-    l3: Substituir lo reconocido en l2 por un dibujo clasificado en l1
-    l4: Crear una gui con dos ventanas, una tipo paint, otra con la imagen input y que el modelo lo cambie de forma automática.
-    l5. Que la imagen real sea video de la webcam
-    l4: Montar una app en la nube
-Datos:
-
-Dibujos dataset : https://github.com/googlecreativelab/quickdraw-dataset
 
