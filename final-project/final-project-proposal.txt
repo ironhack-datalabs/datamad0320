@@ -1,0 +1,51 @@
+
+- Opcion 1
+
+    - Titulo: Venandi (cazador en latin)
+
+    - Descripcion: la idea es hacer una API que facilite y mejore la busqueda de perfiles tech para rrhh. 
+                    Como mejoraria? Usando Github como fuente de datos, en lugar de Linkedin por ejemplo.
+                    El resultado final seria meter en la API localidad, lenguaje de programacion y seniority y obtener una lista de perfiles.
+
+    - Fases:
+        1. Github scraping: hacer scraping en Github mediante Scrapy (spiders) o Beautiful Soup *
+        2. Guardar dataset: usaria MongoDB ya que el tipo de info tendria forma json
+        3. Limpiar data y clasificar: limpiar set y clasificar con modelo no supervisado --> objetivo crear seniority labels
+        4. Predecir seniority labels: entrenar un modelo supervisado que con datos nuevos prediga labels
+        5 Obtener el objetivo: meter en Venandi los 3 parametros dichos perviamente y obtener una lista de perfiles
+
+    - Links: 
+        1. Metodo de scraping similar al que quiero pero con JS: https://github.com/nelsonic/github-scraper
+        2. Tipo de spiders que usaria: https://docs.scrapy.org/en/latest/intro/tutorial.html
+        3. Ejemplo de parametro para las spiders: https://github.com/search?l=JavaScript&o=desc&p=7&q=stars%3A%3E1000+location%3A%22San+Francisco%22+location%3ACA+followers%3A%3E10+language%3AJavaScript&s=followers&type=Users
+        4. Clustering algos: https://scikit-learn.org/stable/modules/clustering.html
+        5. Multiclass algos: https://scikit-learn.org/stable/modules/multiclass.html
+
+    - Modulos: python, pandas, numpy, matplotlib, seaborn, scrapy, sklearn..
+
+    * En el punto de scraping veo la limitacion de que Github pueda bloquear la spider si hace mucho scraping seguido
+    Se me ocurren posibles soluciones como hacerlo desde Tor o limitar la extraccion solo a usuarios con localidad en España o un pais concreto (quizas EEU)
+
+
+- Opcion 2
+
+    - Titulo: Venandi (cazador en latin)
+
+    - Descripcion: una API que te devuelva puestos de trabajo analizando tu CV
+
+    - Fases:
+        1. Modelo multiclass multoutput: entrenar un modelo que te predijera 2 o 3 clases por CV
+        2. Conversion CV: pipeline extraer datos principales de un CV y vectorizarlos
+        3. Spider: hacer una spider que busque puestos de trabajo de la clase/s de tu cv en distintas plataformas
+
+    - Links: 
+        1. Ejemplo parecido: https://github.com/jineshdhruv8/ResumeParser
+        2. Tipo de spiders que usaria: https://docs.scrapy.org/en/latest/intro/tutorial.html
+        3. Ejemplo de parametro para las spiders: https://github.com/search?l=JavaScript&o=desc&p=7&q=stars%3A%3E1000+location%3A%22San+Francisco%22+location%3ACA+followers%3A%3E10+language%3AJavaScript&s=followers&type=Users
+        4. Clustering algos: https://scikit-learn.org/stable/modules/clustering.html
+        5. Multiclass algos: https://scikit-learn.org/stable/modules/multiclass.html
+        6. Dataset de CVs predecidos: https://www.kaggle.com/maitrip/resumes
+
+    - Modulos: python, pandas, numpy, matplotlib, seaborn, scrapy, sklearn..
+
+    
