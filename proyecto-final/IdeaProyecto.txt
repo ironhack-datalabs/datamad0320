@@ -25,3 +25,28 @@ scipy
 bson
 re
 dotenv
+
+
+Descripción del proyecto:
+
+
+Dia 1 :
+Preparación del dataset
+
+
+Dia 2 y 3:
+
+Analisis de las frutas
+
+Dia 4:
+
+Busqueda del mejor modelo y su Entrenamiento .
+
+Dia 5:
+
+Reconocimiento por web cam de las frutas
+Salida por audio de las solución.
+
+
+Dia 6:
+Creación de la Api.
