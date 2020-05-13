@@ -33,7 +33,7 @@ Posibles mejoras: que el recomendador busque en alguna otra plataforma, hbo, ama
 - MongoDB para almacenar los datos del usuario, de series vistas y gustos.
 - Flask
 
-##rock-paper-scissors
+##**rock-paper-scissors**
 
 Jugar una partida de piedra-papel-tijeras a partir de un dataset de fotos de manos.
 Enseñarle el modelos ampliado del juego(lagarto-spock)
