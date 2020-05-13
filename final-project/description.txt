@@ -34,5 +34,7 @@ Datasets:
     *title
     *genres
 https://drive.google.com/file/d/1Dn1BZD3YxgBQJSIjbfNnmCFlDW2jdQGD/view (This data consists of 105339 ratings applied over 10329 movies)
-- Kaggle Netflix dataset : https://www.kaggle.com/shivamb/netflix-shows
+- Kaggle Netflix dataset : 
+https://www.kaggle.com/shivamb/netflix-shows
+https://www.kaggle.com/netflix-inc/netflix-prize-data
 
