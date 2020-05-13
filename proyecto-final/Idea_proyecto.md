@@ -13,16 +13,28 @@ Después entrenaría otra red multi-label para reconocer caras manos, pies de un
 
 Niveles:
 
-    l1: Clasificación de dibujos
-    l2: Reconocimiento de cara, manos, pies en una imagen
+    l1: Clasificación de dibujos (igual solo caras al principio)
+    l2: Reconocimiento de cara, manos, pies en una imagen (empezar con caras)
     l3: Substituir lo reconocido en l2 por un dibujo clasificado en l1
     l4: Crear una gui con dos ventanas, una tipo paint, otra con la imagen input y que el modelo lo cambie de forma automática.
     l5. Que la imagen real sea video de la webcam
+    l6. Introducir reconocimiento de pies, manos, etc..
     l4: Montar una app en la nube
 Datos:
 
 Dibujos dataset : https://github.com/googlecreativelab/quickdraw-dataset
 
+*   **Tecnología**
+
+Para la clasificación de dibujos: Red neuronal propia multi label (reduciendo el numero de labels del data set original a tres o cuatro clases)
+
+Para el reconocimiento de caras: VGGFace2 de keras (https://machinelearningmastery.com/how-to-perform-face-recognition-with-vggface2-convolutional-neural-network-in-keras/)
+
+Para face swapping: https://life-in-a-monospace-typeface.tumblr.com/post/28495219189/quick-and-dirty-automatic-face-replacement-with
+
+
+
+Para la gui: tkinker and PIL (https://www.youtube.com/watch?v=OdDCsxfI8S0, https://www.youtube.com/watch?v=rhvJ_M218EQ)
 
 
 ## IDEA #2
@@ -39,12 +51,12 @@ El proyecto se dividiría en dos fases:
 
     1. Una red neuronal o machine learning clasificando cuatro o cinco estilos pictóricos de un par de bases de datos.
 
-    2.  Usando los features modelados de cada estilo, hacer una transferencia de estilo a una imagen input.
+    2. Usando los features modelados de cada estilo, hacer una transferencia de estilo a una imagen input.
 
 Niveles:
 
     l1: Style transfer de una imagen a otra 
-    l2: Clasificación  de estilos pictóricos
+    l2: Clasificación  de estilos pictóricos u otros
     l3: Pasar la clasificación como imput en l1 (es lo que veo más complicado ahora mismo)
     l4: Que haga una transferencia de estilo de un dibujo a mano alzada?
     l4: Montar una app en la nube
