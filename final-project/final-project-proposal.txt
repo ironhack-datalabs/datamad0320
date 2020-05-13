@@ -34,9 +34,9 @@
     - Descripcion: una API que te devuelva puestos de trabajo analizando tu CV
 
     - Fases:
-        1. Modelo multiclass multoutput: entrenar un modelo que te predijera 2 o 3 clases por CV
+        1. Modelo multiclass multoutput: entrenar un modelo que te predijera 2 o 3 clases por CV (especialidad y experiencia)
         2. Conversion CV: pipeline extraer datos principales de un CV y vectorizarlos
-        3. Spider: hacer una spider que busque puestos de trabajo de la clase/s de tu cv en distintas plataformas
+        3. Spider: hacer una spider que busque puestos de trabajo de las clases de tu cv en distintas plataformas
 
     - Links: 
         1. Ejemplo parecido: https://github.com/jineshdhruv8/ResumeParser
