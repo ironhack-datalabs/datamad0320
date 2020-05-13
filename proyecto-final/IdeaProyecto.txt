@@ -28,6 +28,10 @@ dotenv
 
 
 Descripción del proyecto:
+Paginas donde poder basarme 
+https://www.kaggle.com/mcbean/fruit-classification-w-nn
+https://www.danielpradilla.info/blog/classifying-convolutional-neural-network-keras/
+https://towardsdatascience.com/solving-a-simple-classification-problem-with-python-fruits-lovers-edition-d20ab6b071d2
 
 
 Dia 1 :
@@ -37,7 +41,6 @@ Preparación del dataset
 Dia 2 y 3:
 
 Analisis de las frutas
-
 Dia 4:
 
 Busqueda del mejor modelo y su Entrenamiento .
