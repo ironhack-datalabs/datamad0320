@@ -1,5 +1,38 @@
 Final Project Description:
 
--Titulo proyecto [Corto y concreto]
-- Descripción de proyecto [máx 200 palabras]
-- modulos pyhton, APIs, tecnologias, links de referencia [max 20 links, minimo 5] 
+Projecto : Sistema de recomendación de peliculas: 
+
+Opción 1 :Crear una API  en el que busques una peli y te indique  en que plataforma puedes verla (HBO, Netflix etc..) y que tenga un sistema de recomendación de peliculas:
+- ejemplo : https://reelgood.com/movies/source/amazon?offset=150
+- Apps disponibles para ver la peli: Netflix, HBO, Amazon, Apple TV  (WebScrapping filmaffinity-> https://www.filmaffinity.com/uk/main.html)
+- peliculas organizadas por género, rating, año..
+- sistema de recomendación de pelis: 
+            * top peliculas similares por ratings/generos
+- Link trailer youtube (API youtube requests-> "https://www.googleapis.com/youtube/v3/search?")
+- modulos: python, pandas, webscrapping,BeautifulSoup,apis,Mongodb compass ,docker,flask,sklearn/spicy distance...
+
+APIS: Utelly (https://english.api.rakuten.net/utelly/api/utelly/endpoints), Unogs - netflix(https://rapidapi.com/unogs/api/unogs); amazon prime https://rapidapi.com/Streamzui/api/streamzui-amazon-prime-video-search
+
+
+Opción 2 :Api con sistema de recomendacion de peliculas a un usuario: 
+- Datasets con ratings usuarios: MovieLens, Kaggle
+- Collaborative Filtering or Content-Based System
+- Similarity Matrix
+*predecir el rating que le va a dar un usuario a una pelicula que no ha valorado todavía:
+- Surprise Library
+- Machine Learning  -> Regression (XGBoost..)
+- Cold Start problem
+
+
+Datasets:
+
+- IDMB Dataset: https://www.imdb.com/interfaces/ ; API : https://rapidapi.com/blog/how-to-use-imdb-api/ o https://github.com/alberanid/imdbpy; https://imdb-api.com/api#SearchAll-header
+- MovieLens: https://grouplens.org/datasets/movielens/
+    *movieId
+    *userId
+    *rating
+    *title
+    *genres
+https://drive.google.com/file/d/1Dn1BZD3YxgBQJSIjbfNnmCFlDW2jdQGD/view (This data consists of 105339 ratings applied over 10329 movies)
+- Kaggle Netflix dataset : https://www.kaggle.com/shivamb/netflix-shows
+
