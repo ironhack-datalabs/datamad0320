@@ -1,0 +1,25 @@
+- Título: "LaComprApp" (No pienses en qué cocinar, hacer la lista de la compra, ir a hacer la compra, etc...lo hacemos por tí)
+
+- Objetivo: Generar una lista de la compra semanal y un menú diario para los 5 días laborables de la semana en función de los gustos y preferencias del usuario.
+    
+- Desarrollo: 
+    Paso 1.- De forma iteractiva con el usuario le haces una serie de preguntas(L0= iteractivo por pantalla, L1= iteractivo por voz) sobre sus preferencias y gustos alimentarios.
+    
+    Paso 2.- Entra el sistema de recomendación y te genera 5 menús, uno para cada día de la semana:
+        if "te gusta"== "no":
+            Qué día no te gusta y porqué. La BBDD se actualiza con sus preferencias y genera un nuevo plato para ese día.
+        if "te gusta"== "sí":
+            Desde la BBDD selecciona los elementos que necesitas, las cantidades y te genera un PDF/email con la lista de la compra de la semana y las recetas de los menús diarios.
+
+- A implementar:
+    1.- Una preferencia por precio haciendo wep scraping de los precios del super
+    2.- Iteractivo por fotos en el paso 1 
+    3.- Mayor cantidad de características en el paso 1. Más preguntas=más info=más variables=más dificil.
+        
+    
+#BBDD de recetas:
+https://airtable.com/universe/expHZcS7kWEyq5gUH/recipe-database?explore=true
+
+##Web scraping
+
+##Sistema de reconocimiento de voz de google ?
