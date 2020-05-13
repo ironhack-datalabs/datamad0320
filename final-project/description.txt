@@ -17,7 +17,7 @@ APIS: Utelly (https://english.api.rakuten.net/utelly/api/utelly/endpoints), Unog
 Opción 2 :Api con sistema de recomendacion de peliculas a un usuario: 
 - Datasets con ratings usuarios: MovieLens, Kaggle
 - Collaborative Filtering or Content-Based System
-- Similarity Matrix
+- Similarity Matrix 
 *predecir el rating que le va a dar un usuario a una pelicula que no ha valorado todavía:
 - Surprise Library
 - Machine Learning  -> Regression (XGBoost..)
