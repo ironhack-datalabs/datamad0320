@@ -1,5 +1,6 @@
 #IDEAS PROYECTOS
-He puesto ideas de proyectos más complicadas y más sencillas pero estoy un poco bloqueada.
+
+(He puesto ideas de proyectos más complicadas y más sencillas pero estoy un poco bloqueada.Así que añado ideas)
 
 ##Nutritional information
 
@@ -20,10 +21,10 @@ Posibles mejoras:
 
 Urls/dataset:
 
-https://www.kaggle.com/kmader/food41 (El dataset es enorme y lo mismo tenga
+https://www.kaggle.com/kmader/food41 
 https://www.tensorflow.org/datasets/catalog/food101
 
-##*Recomendador de series Netflix:
+##Recomendador de series Netflix:
 
 Crear una api con un sistema recomendador que recomiende series que ver.
 https://www.kaggle.com/chasewillden/netflix-shows Es el dataset más limpio que he encontrado para series. Hay otros pero incluyen demasiadas peliculas y quiero enfocarme en series.
